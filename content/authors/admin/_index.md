@@ -21,13 +21,10 @@ role: Doctoral Student
 social:
 - icon: envelope
   icon_pack: fas
-  link: /#contact
+  link: mailto:bghafour@gmail.com
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: graduation-cap
-  icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://twitter.com/BijeanGh
 - icon: github
   icon_pack: fab
   link: https://github.com/bijeanghafouri
@@ -44,4 +41,4 @@ Bijean Ghafouri is a Provost Doctoral Fellow at the University of Southern Calif
 
 Before starting his Ph.D., Bijean Ghafouri completed an undergraduate degree at the University of Montreal. In 2019-2020, he was named a Fulbright-Killam Fellow and spent a semester at the Center for Data Science at American University, DC.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}C.V.{{< /staticref >}}
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/bijeanghafouricv.pdf" "newtab" >}}C.V.{{< /staticref >}}
