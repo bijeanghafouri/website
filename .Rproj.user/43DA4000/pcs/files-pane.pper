@@ -2,8 +2,8 @@
     "sortOrder": [
         {
             "columnIndex": 2,
-            "ascending": true
+            "ascending": false
         }
     ],
-    "path": "~"
+    "path": "~/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/config/_default"
 }
