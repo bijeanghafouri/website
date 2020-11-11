@@ -1,5 +1,5 @@
 ---
-bio: My research interests include elections and political behavior.
+bio: USC
 education:
   courses:
   - course: Ph.D. in Political Science
@@ -8,7 +8,7 @@ education:
   - course: BSc in Political Science
     institution: University of Montreal
     year: 2020
-email: "bghafour [at] usc [dot] edu"
+email: "bghafour [at] usc.edu"
 highlight_name: false
 interests:
 - Computational Social Science
@@ -37,8 +37,9 @@ user_groups:
 - Principal Investigators
 ---
 
-Bijean Ghafouri is a Provost Doctoral Fellow at the University of Southern California, Los Angeles. His current research focuses on developing computational methods for electoral persuasion, campaigns and understanding political behavior. Methodologically, he analyzes big data on social media with text and network analysis. He is member of the Networks & Society + Humans & Machines lab in the Machine Intelligence and Data Science (MINDS) group at the Information Sciences Institute. 
+Bijean Ghafouri is a Provost Doctoral Fellow at the University of Southern California, Los Angeles. Before starting his Ph.D., he completed an undergraduate degree at the University of Montreal. In 2019-2020, he was named a Fulbright-Killam Fellow and spent a semester at the Center for Data Science at American University, DC.
 
-Before starting his Ph.D., Bijean Ghafouri completed an undergraduate degree at the University of Montreal. In 2019-2020, he was named a Fulbright-Killam Fellow and spent a semester at the Center for Data Science at American University, DC.
+His current research focuses on developing and using computational methods for electoral persuasion, campaigns and understanding political behavior. Methodologically, he analyzes big data on social media with text and network analysis. He is a member of the Networks & Society + Humans & Machines lab in the Machine Intelligence and Data Science (MINDS) group at the Information Sciences Institute. 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/bijeanghafouricv.pdf" "newtab" >}}C.V.{{< /staticref >}}
+
+{{< icon name="download" pack="fas" >}} Download his {{< staticref "media/bijeanghafouricv.pdf" "newtab" >}}C.V.{{< /staticref >}}

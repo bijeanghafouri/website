@@ -10,4 +10,3 @@ share: false
 title: Terms
 ---
 
-...
