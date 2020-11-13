@@ -13,4 +13,4 @@ knitr::opts_chunk$set(echo = TRUE)
 Here are a some sources for data that can be useful either for your research, or simply just to play around with. 
 
 
-[linked phrase](http://example.com)
+[R for Canadians](https://doodles.mountainmath.ca/)
