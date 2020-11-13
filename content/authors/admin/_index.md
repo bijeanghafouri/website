@@ -5,7 +5,7 @@ education:
   - course: Ph.D. in Political Science
     institution: University of Southern California
     year: Quantitative Methods
-  - course: BSc in Political Science
+  - course: BSc. in Political Science, Hon.
     institution: University of Montreal
     year: 2020
 email: "bghafour [at] usc.edu"
