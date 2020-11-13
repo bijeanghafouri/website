@@ -1,0 +1,16 @@
+---
+title: "data_sources"
+author: "Bijean Ghafouri"
+date: "13/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data sources
+Here are a some sources for data that can be useful either for your research, or simply just to play around with. 
+
+
+[linked phrase](http://example.com)
