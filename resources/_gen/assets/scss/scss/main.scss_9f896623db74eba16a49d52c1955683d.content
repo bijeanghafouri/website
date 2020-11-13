@@ -8660,8 +8660,8 @@ a.hero-cta-alt:hover {
   position: relative; }
 
 .avatar {
-  width: 270px;
-  height: 270px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto;
   object-fit: cover; }
 
