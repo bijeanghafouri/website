@@ -14,13 +14,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 How you organize your data analysis project is crucial for many reasons. Without a pre-defined structure to your projects, you are likely to forget years or even months from now what you have done looking back at projects. This may be the case when you get back on a dormant project, or receive major revisions in an R&R six months after submission. Projects that involve collaboration between multiple members should also have a unified structure understand of how their analysis is structured to avoid any mistake. 
 
-We call this you [workflow](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/). Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between **tasks**. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level. 
+We call this your [workflow](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/). Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between **tasks**. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level. 
 \bigskip
 
 
-The first task is to **import** your data. This tasks has at minimum three directories: `input`, `src` and `output`. 
+### Tasks structure
+The first task is to **import** your data. This tasks has at minimum three directories: `input`, `output` and `src`. 
 
-* `input` contains files for task to read
+* `input` contains raw files for task to read
 * `output` contains files ready to go
 *  `src`  contains scripts to read input and write to output
 
@@ -35,9 +36,11 @@ Let's see what a basic folder structure looks like. These folder names may chang
 └─── src
 ```
 
-The `input` never get modified. This is the whole point of having scripts in `src`, to read and modify the input. Once transformed, we can place the new files in `output`. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files. 
+The `input` never get modified. You will only drop raw data files into it. This is the whole point of having scripts in `src`, to read and modify the input. Once transformed, we can place the new files in `output`. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files. Furthermore, the objective of `src` is not to clean and manipulate data on a deep level, but rather to create a structured, rectangular datasets ready for further analyses, dumped into `output`. In subsequent tasks, you should take in the files from `output` as inputs to clean and analyze specifically for the goal of this part. You can imagine this as a chain-rule for a structured flow of your data. 
 
-To create these folders in  `R`, you can run the following commands. This should be at the top of any script. 
+
+### Structuring your task in `R`
+To create these folder, you can run the following commands. This should be at the top of any script. 
 ```{r, eval = FALSE}
 # ------------ packages  ----------
 require(pacman)
@@ -54,8 +57,53 @@ dir.create(paste0(path,"/","output",sep=""),showWarnings = T)
 dir.create(paste0(path,"/","src",sep=""),showWarnings = T)
 pathin = paste0(path,"/","input",sep="")
 pathout = paste0(path,"/","ouput",sep="")
-pathdat = paste0(path,"/","scr",sep="")
+pathsrc = paste0(path,"/","scr",sep="")
 ```
 
-This will create three folders for each component of this tasks. You may notice that I set the directory with `{here}`. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that [everyone](/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/workflow/here().jpg) had different directory structures, this [package](https://github.com/jennybc/here_here#readme) allows you to limit the exposure of your local setup. 
-  
+This will create three folders for each component of this tasks. You may notice that I set the directory with `{here}`. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that [everyone](https://i.imgur.com/jKWxztR.png) had different directory structures, this [package](https://github.com/jennybc/here_here#readme) allows you to limit the exposure of your local setup. 
+
+
+The `input` folder will contain **all** data files you need for this project (all subsequent tasks). Then, you will read them in your script, contained in the `src` folder, to then export to the `output` folder (often in a .csv format). Following tasks will read in data files from `output` that they each need. 
+
+
+I have the following structure for a single analysis task. You can have many analysis tasks, depending on the nature of your project. 
+
+```
+task2
+│   README.md
+│
+└─── src 
+│   └─── data-cleaning
+│       │   dataset1.R
+│       │   dataset2.R
+│   │   regression-1.R
+│   │   table-1.R
+│   
+└─── data 
+    │   import.R
+    │   dat.csv
+│ 
+└─── figures
+    │   q-qplot.png
+    │   heatmap.png
+│ 
+└─── tables
+    │   regression1.tex
+│ 
+└─── output
+│
+└─── docs
+```
+
+Remember, this structure is for one task only. It is very well possible that your project might only require two tasks (import and single analysis). However, you are more likely to have many tasks. To create these directories, you may use the same code as for the first task. 
+
+
+### Self-Documentation
+Many will dislike the use of documentation in the classic format of a .txt file that you update regularly as you move forward with your project. You probably experienced this where, at the end of the day, your code almost never keeps up with your documentation. This is why it is strongly recommended to **self-document** your code within your scripts. This will allow you to document your code within your script as-you-go. Obviously, you will continue to keep track of what you do in your documentation. The difference is that your documentation will be higher-level instructions, while your self-documentation will follow your script closely. In the case where your documentation is out-of-date, you will be able to rely on your script to reconstruct the steps of your project. 
+
+
+### Optional directories
+You may wish to incorporate personal workflow items into this system.
+First, it is very well possible that you use notebooks or markdown files to test your code as you write. Although this might be a very good solution for testing, it is recommended that you always have a final script that contains all your chunks in the `src` folder. If you use notebooks, put these .rmd or .ipynb files in a `note` directory. 
+
+You may have noticed that the import task structure contains a `docs` directory. This is for any documentation that comes with data you are using. This will often be the case with survey data, or data from other public sources.  

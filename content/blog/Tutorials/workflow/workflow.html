@@ -13,11 +13,13 @@ output:
 
 
 <p>How you organize your data analysis project is crucial for many reasons. Without a pre-defined structure to your projects, you are likely to forget years or even months from now what you have done looking back at projects. This may be the case when you get back on a dormant project, or receive major revisions in an R&amp;R six months after submission. Projects that involve collaboration between multiple members should also have a unified structure understand of how their analysis is structured to avoid any mistake.</p>
-<p>We call this you <a href="https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/">workflow</a>. Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between <strong>tasks</strong>. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level.
+<p>We call this your <a href="https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/">workflow</a>. Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between <strong>tasks</strong>. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level.
 </p>
-<p>The first task is to <strong>import</strong> your data. This tasks has at minimum three directories: <code>input</code>, <code>src</code> and <code>output</code>.</p>
+<div id="tasks-structure" class="section level3">
+<h3>Tasks structure</h3>
+<p>The first task is to <strong>import</strong> your data. This tasks has at minimum three directories: <code>input</code>, <code>output</code> and <code>src</code>.</p>
 <ul>
-<li><code>input</code> contains files for task to read</li>
+<li><code>input</code> contains raw files for task to read</li>
 <li><code>output</code> contains files ready to go</li>
 <li><code>src</code> contains scripts to read input and write to output</li>
 </ul>
@@ -28,8 +30,11 @@ output:
 └─── input
 └─── output
 └─── src</code></pre>
-<p>The <code>input</code> never get modified. This is the whole point of having scripts in <code>src</code>, to read and modify the input. Once transformed, we can place the new files in <code>output</code>. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files.</p>
-<p>To create these folders in <code>R</code>, you can run the following commands. This should be at the top of any script.</p>
+<p>The <code>input</code> never get modified. You will only drop raw data files into it. This is the whole point of having scripts in <code>src</code>, to read and modify the input. Once transformed, we can place the new files in <code>output</code>. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files. Furthermore, the objective of <code>src</code> is not to clean and manipulate data on a deep level, but rather to create a structured, rectangular datasets ready for further analyses, dumped into <code>output</code>. In subsequent tasks, you should take in the files from <code>output</code> as inputs to clean and analyze specifically for the goal of this part. You can imagine this as a chain-rule for a structured flow of your data.</p>
+</div>
+<div id="structuring-your-task-in-r" class="section level3">
+<h3>Structuring your task in <code>R</code></h3>
+<p>To create these folder, you can run the following commands. This should be at the top of any script.</p>
 <pre class="r"><code># ------------ packages  ----------
 require(pacman)
 pacman::p_load(here)
@@ -45,5 +50,43 @@ dir.create(paste0(path,&quot;/&quot;,&quot;output&quot;,sep=&quot;&quot;),showWa
 dir.create(paste0(path,&quot;/&quot;,&quot;src&quot;,sep=&quot;&quot;),showWarnings = T)
 pathin = paste0(path,&quot;/&quot;,&quot;input&quot;,sep=&quot;&quot;)
 pathout = paste0(path,&quot;/&quot;,&quot;ouput&quot;,sep=&quot;&quot;)
-pathdat = paste0(path,&quot;/&quot;,&quot;scr&quot;,sep=&quot;&quot;)</code></pre>
-<p>This will create three folders for each component of this tasks. You may notice that I set the directory with <code>{here}</code>. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that <a href="/Users/bijeanghafouri/Dropbox/My%20Mac%20(Bijean’s%20MacBook%20Pro)/Documents/website/website/content/blog/Tutorials/workflow/here().jpg">everyone</a> had different directory structures, this <a href="https://github.com/jennybc/here_here#readme">package</a> allows you to limit the exposure of your local setup.</p>
+pathsrc = paste0(path,&quot;/&quot;,&quot;scr&quot;,sep=&quot;&quot;)</code></pre>
+<p>This will create three folders for each component of this tasks. You may notice that I set the directory with <code>{here}</code>. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that <a href="https://i.imgur.com/jKWxztR.png">everyone</a> had different directory structures, this <a href="https://github.com/jennybc/here_here#readme">package</a> allows you to limit the exposure of your local setup.</p>
+<p>The <code>input</code> folder will contain <strong>all</strong> data files you need for this project (all subsequent tasks). Then, you will read them in your script, contained in the <code>src</code> folder, to then export to the <code>output</code> folder (often in a .csv format). Following tasks will read in data files from <code>output</code> that they each need.</p>
+<p>I have the following structure for a single analysis task. You can have many analysis tasks, depending on the nature of your project.</p>
+<pre><code>task2
+│   README.md
+│
+└─── src 
+│   └─── data-cleaning
+│       │   dataset1.R
+│       │   dataset2.R
+│   │   regression-1.R
+│   │   table-1.R
+│   
+└─── data 
+    │   import.R
+    │   dat.csv
+│ 
+└─── figures
+    │   q-qplot.png
+    │   heatmap.png
+│ 
+└─── tables
+    │   regression1.tex
+│ 
+└─── output
+│
+└─── docs</code></pre>
+<p>Remember, this structure is for one task only. It is very well possible that your project might only require two tasks (import and single analysis). However, you are more likely to have many tasks. To create these directories, you may use the same code as for the first task.</p>
+</div>
+<div id="self-documentation" class="section level3">
+<h3>Self-Documentation</h3>
+<p>Many will dislike the use of documentation in the classic format of a .txt file that you update regularly as you move forward with your project. You probably experienced this where, at the end of the day, your code almost never keeps up with your documentation. This is why it is strongly recommended to <strong>self-document</strong> your code within your scripts. This will allow you to document your code within your script as-you-go. Obviously, you will continue to keep track of what you do in your documentation. The difference is that your documentation will be higher-level instructions, while your self-documentation will follow your script closely. In the case where your documentation is out-of-date, you will be able to rely on your script to reconstruct the steps of your project.</p>
+</div>
+<div id="optional-directories" class="section level3">
+<h3>Optional directories</h3>
+<p>You may wish to incorporate personal workflow items into this system.
+First, it is very well possible that you use notebooks or markdown files to test your code as you write. Although this might be a very good solution for testing, it is recommended that you always have a final script that contains all your chunks in the <code>src</code> folder. If you use notebooks, put these .rmd or .ipynb files in a <code>note</code> directory.</p>
+<p>You may have noticed that the import task structure contains a <code>docs</code> directory. This is for any documentation that comes with data you are using. This will often be the case with survey data, or data from other public sources.</p>
+</div>
