@@ -1,0 +1,61 @@
+---
+title: "Workflow"
+author: "Bijean Ghafouri"
+date: "30/11/2020"
+output: 
+  html_document:
+  theme: cosmo
+  highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+How you organize your data analysis project is crucial for many reasons. Without a pre-defined structure to your projects, you are likely to forget years or even months from now what you have done looking back at projects. This may be the case when you get back on a dormant project, or receive major revisions in an R&R six months after submission. Projects that involve collaboration between multiple members should also have a unified structure understand of how their analysis is structured to avoid any mistake. 
+
+We call this you [workflow](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/). Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between **tasks**. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level. 
+\bigskip
+
+
+The first task is to **import** your data. This tasks has at minimum three directories: `input`, `src` and `output`. 
+
+* `input` contains files for task to read
+* `output` contains files ready to go
+*  `src`  contains scripts to read input and write to output
+
+Let's see what a basic folder structure looks like. These folder names may change based on field or personal preference, but here they are mostly standard. 
+
+```
+  
+│
+└─── docs
+└─── input
+└─── output
+└─── src
+```
+
+The `input` never get modified. This is the whole point of having scripts in `src`, to read and modify the input. Once transformed, we can place the new files in `output`. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files. 
+
+To create these folders in  `R`, you can run the following commands. This should be at the top of any script. 
+```{r, eval = FALSE}
+# ------------ packages  ----------
+require(pacman)
+pacman::p_load(here)
+
+# ---------- workflow -------------
+# set directory
+path <- here::here()
+setwd(path)
+
+# set up file paths 
+dir.create(paste0(path,"/","input",sep=""),showWarnings = T)
+dir.create(paste0(path,"/","output",sep=""),showWarnings = T)
+dir.create(paste0(path,"/","src",sep=""),showWarnings = T)
+pathin = paste0(path,"/","input",sep="")
+pathout = paste0(path,"/","ouput",sep="")
+pathdat = paste0(path,"/","scr",sep="")
+```
+
+This will create three folders for each component of this tasks. You may notice that I set the directory with `{here}`. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that [everyone](/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/workflow/here().jpg) had different directory structures, this [package](https://github.com/jennybc/here_here#readme) allows you to limit the exposure of your local setup. 
+  
