@@ -1,5 +1,5 @@
 ---
-title: "Workflow"
+title: "Workflow Structure"
 author: "Bijean Ghafouri"
 date: "30/11/2020"
 output: 
@@ -51,34 +51,31 @@ dir.create(paste0(path,&quot;/&quot;,&quot;src&quot;,sep=&quot;&quot;),showWarni
 pathin = paste0(path,&quot;/&quot;,&quot;input&quot;,sep=&quot;&quot;)
 pathout = paste0(path,&quot;/&quot;,&quot;ouput&quot;,sep=&quot;&quot;)
 pathsrc = paste0(path,&quot;/&quot;,&quot;scr&quot;,sep=&quot;&quot;)</code></pre>
-<p>This will create three folders for each component of this tasks. You may notice that I set the directory with <code>{here}</code>. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that <a href="https://i.imgur.com/jKWxztR.png">everyone</a> had different directory structures, this <a href="https://github.com/jennybc/here_here#readme">package</a> allows you to limit the exposure of your local setup.</p>
+<p>This will create three folders for each component of this tasks. You may notice that I set the directory with <code>{here}</code>. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that <a href="https://i.imgur.com/jKWxztR.png">everyone</a> has different directory structures, this <a href="https://github.com/jennybc/here_here#readme">package</a> allows you to limit the exposure of your local setup.</p>
 <p>The <code>input</code> folder will contain <strong>all</strong> data files you need for this project (all subsequent tasks). Then, you will read them in your script, contained in the <code>src</code> folder, to then export to the <code>output</code> folder (often in a .csv format). Following tasks will read in data files from <code>output</code> that they each need.</p>
-<p>I have the following structure for a single analysis task. You can have many analysis tasks, depending on the nature of your project.</p>
-<pre><code>task2
-│   README.md
-│
-└─── src 
-│   └─── data-cleaning
-│       │   dataset1.R
-│       │   dataset2.R
-│   │   regression-1.R
-│   │   table-1.R
-│   
-└─── data 
-    │   import.R
-    │   dat.csv
-│ 
-└─── figures
-    │   q-qplot.png
-    │   heatmap.png
-│ 
-└─── tables
-    │   regression1.tex
-│ 
-└─── output
-│
-└─── docs</code></pre>
-<p>Remember, this structure is for one task only. It is very well possible that your project might only require two tasks (import and single analysis). However, you are more likely to have many tasks. To create these directories, you may use the same code as for the first task.</p>
+<p>I have the following structure for a single analysis task that comes directly from the <a href="https://hrdag.org/">HRDA Group</a>. You can have many analysis tasks, depending on the nature of your project.</p>
+<pre><code>├── import
+│   ├── Makefile
+│   ├── input
+│   ├── output
+│   └── src
+├── clean
+│   ├── Makefile
+│   ├── input
+│   ├── output
+│   └── src
+├── model
+│   ├── Makefile
+│   ├── input
+│   ├── output
+│   └── src
+└── write
+    ├── Makefile
+    ├── input
+    ├── output
+    └── src</code></pre>
+<p>The goal of the following structure is create a linear flow to how your data is transformed. For example, your data from into the <code>import</code> directory raw. The <code>clean</code> directory will take in the data from the output folder of <code>import</code> and process it. The <code>model</code> directory will then itself take the output data from <code>clean</code> and process it. In this step, you will likely create a <code>tables</code> and <code>figs</code> folder in the output folder. Finally, <code>write</code> will follow the same flow. For specific file names, I recommend following these <a href="https://speakerdeck.com/jennybc/how-to-name-files">best practices</a></p>
+<p>Remember, this structure is for one task only. Depending on the nature of your project, or personal preference, you may need only one task or more.</p>
 </div>
 <div id="self-documentation" class="section level3">
 <h3>Self-Documentation</h3>
@@ -89,4 +86,35 @@ pathsrc = paste0(path,&quot;/&quot;,&quot;scr&quot;,sep=&quot;&quot;)</code></pr
 <p>You may wish to incorporate personal workflow items into this system.
 First, it is very well possible that you use notebooks or markdown files to test your code as you write. Although this might be a very good solution for testing, it is recommended that you always have a final script that contains all your chunks in the <code>src</code> folder. If you use notebooks, put these .rmd or .ipynb files in a <code>note</code> directory.</p>
 <p>You may have noticed that the import task structure contains a <code>docs</code> directory. This is for any documentation that comes with data you are using. This will often be the case with survey data, or data from other public sources.</p>
+</div>
+<div id="makefile-and-drake" class="section level3">
+<h3>Makefile and <code>{drake}</code></h3>
+<p>You may notice that each task contains a makefile. This file is to automate the execution of all the scripts from the <code>src</code> folder. Although in other programming languages you might need to manually create a makefile, in <code>R</code> you can use the <code>{drake}</code> <a href="https://milesmcbain.xyz/posts/the-drake-post/">package</a>.</p>
+<p>There a numerous tools to create and automate workflow styles. Many use targets, like <code>{drake}</code>. Here are a few:</p>
+<ul>
+<li><a href="http://projecttemplate.net/">ProjectTemplate</a></li>
+<li><a href="https://jdblischak.github.io/workflowr/">workflowr</a></li>
+<li><a href="https://github.com/benmarwick/rrtools">rrtools</a></li>
+<li><a href="https://github.com/vimc/orderly">ordely</a></li>
+<li><a href="https://github.com/MilesMcBain/fnmate">fnmate</a></li>
+<li><a href="https://github.com/milesmcbain/dflow">dflow</a></li>
+<li><a href="https://docs.ropensci.org/drake/">drake</a></li>
+<li><a href="https://pirategrunt.com/represtools/">represtool</a></li>
+<li><a href="https://itsalocke.com/starters/">starters</a></li>
+</ul>
+</div>
+<div id="notebooks" class="section level3">
+<h3>Notebooks</h3>
+<p>Notebooks combines the code, text and visualization in one document. This may help with reproducibility because each chunk is immediately followed by its output. So what are the downsides? The main issue with notebooks is the lack of structure in running chunks. Although they are sequentially ordered, you are most probably running them in all sorts of ways to fix bugs or add features. This lack of consistency is likely to produce more problems than not. For more on problems associated with notebooks, see this <a href="https://www.youtube.com/watch?v=7jiPeIFXb6U">talk</a> by Joel Grus.</p>
+<p>Notebooks remain useful for the courses, exploratory data analysis, reports (where more text than code) and dashboards.</p>
+</div>
+<div id="project-as-an-r-package" class="section level3">
+<h3>Project as an <code>R</code> Package</h3>
+<p>As per McBain’s <a href="https://milesmcbain.xyz/posts/an-okay-idea/">blog post</a>, although creating an <code>R</code> package is used by many, there are some pitfalls associated with it. Although it is a great way to automate your project with testing and solid structure, there remains the little payoff, and the signal to noise ratio is simply much too low. Another issue is the fact that not everyone is comfortable with the package environment, even if they are a domain expert. This defeats the purpose of reproducibility since the public’s access becomes limited.</p>
+</div>
+<div id="alternatives-to-project-structure" class="section level3">
+<h3>Alternatives to project structure</h3>
+<p>We will often see directories and project structures that follow a flow based on the content of the folders rather than the order of the project itself. For example, projects will be organized with the following folders: <code>data</code>, <code>analysis</code>, <code>tables-figures</code>. Although this does fits the purpose of reproducibility, it does not flow with the logic of the project. You should have different folders for different <strong>tasks</strong>. In the example above, many tasks can be included in the <code>analysis</code> folder, like cleaning and modeling. Some may point out that this is just a discrepancy in the placement of folders in different directories, which is essentially the case. However, the problem lies within how someone who has never worked on this project will be able to understand its logic.</p>
+<p>Finally, you can find great posts <a href="https://chrisvoncsefalvay.com/2018/08/09/structuring-r-projects/">here</a>, <a href="https://the-turing-way.netlify.app/welcome">here</a> and <a href="https://edwinth.github.io/ADSwR/index.html">here</a> to help you structure your projects.</p>
+<p>At the end of the day, the goal for a clear project structure is to convey what exactly you are doing to everyone else that may have access to it.</p>
 </div>
