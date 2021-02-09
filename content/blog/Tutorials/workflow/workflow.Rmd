@@ -1,7 +1,7 @@
 ---
 title: "Workflow Structure"
 author: "Bijean Ghafouri"
-lastmod: 2020-10-01
+lastmod: 2020-10-05
 output: 
   html_document:
   theme: cosmo
@@ -12,6 +12,10 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+*Programs must be written for people to read, and only incidentally for machines to execute.* 
+
+*― Harold Abelson, Structure and Interpretation of Computer Programs*
+
 How you [organize](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/) your data analysis project is crucial for many reasons. Without a pre-defined structure to your projects, you are likely to forget years or even months from now what you have done looking back at projects. This may be the case when you get back on a dormant project, or receive major revisions in an R&R six months after submission. Projects that involve collaboration between multiple members should also have a unified structure understand of how their analysis is structured to avoid any mistake. 
 
 
@@ -20,7 +24,7 @@ We call this your [workflow](https://hrdag.org/tech-notes/harmful.html). Althoug
 
 
 ### Tasks structure
-The first task is to **import** your data. This tasks has at minimum three directories: `input`, `output` and `src`. 
+The first task is to **import** your data. This tasks has at minimum three directories: `input`, `output` and `src` (source). 
 
 * `input` contains raw files for task to read
 * `output` contains files ready to go
@@ -109,7 +113,7 @@ You may have noticed that the import task structure contains a `docs` directory.
 
 
 ### Makefile and `{drake}` 
-You may notice that each task contains a makefile. This file is to automate the execution of all the scripts from the `src` folder. Although in other programming languages you might need to manually create a makefile, in `R` you can use the `{drake}` [package](https://milesmcbain.xyz/posts/the-drake-post/).  
+You may notice that each task contains a makefile. This file is to automate the execution of all the scripts from the `src` folder. Although in other programming languages you might need to manually create a makefile, in `R` you can use the `{drake}` [package](https://milesmcbain.xyz/posts/the-drake-post/) (more info [here](https://www.youtube.com/watch?v=4vu8h_Zh8Wg)). 
 
 There a numerous tools to create and automate workflow styles. Many use targets, like `{drake}`. Here are a few: 
 
@@ -122,6 +126,11 @@ There a numerous tools to create and automate workflow styles. Many use targets,
 * [drake](https://docs.ropensci.org/drake/)
 * [represtool](https://pirategrunt.com/represtools/)
 * [starters](https://itsalocke.com/starters/)
+
+
+The `{drake}` package makes your code focus on functions, rather than simple scripts. Although it has the same intention as makefiles, the package's logic is embedded within a dataframe, following `R`'s ecosystem. 
+
+
 
 
 ### Notebooks
@@ -142,3 +151,67 @@ Finally, you can find great posts [here](https://chrisvoncsefalvay.com/2018/08/0
 
 At the end of the day, the goal for a clear project structure is to convey what exactly you are doing to everyone else that may have access to it. 
 
+
+
+## Patrick Ball's Principles of Data Processing
+This is from his great [talk](https://www.youtube.com/watch?v=ZSunU9GQdcI). Basically, he gives his take on 'where to put your stuff'.
+
+His main argument is that the way documentation is understood makes us take it for granted, when it is actually central to our code. How do we write code and organize projects to know what you did a few months from now? It is also meant to organize your work to facilitate collaboration with colleagues where they will be able to understand *exactly* what you are doing. 
+
+He identifies four goals for statistical workflow: 
+
+* **Transparency**: possible to review every task
+
+* Auditbility: possible to test the result of every task, where the test is often done in a different computer language and by different analyst. 
+
+* Reproducibility: any scientist with the same tools and the same code could recalculate the results and get the same answers. 
+
+* Scalabilty: 'more than 2' input files, updates to your input files, analysts who are going to work on the project, results in the report you will publish, different analyses which derive from the inputs, languages needed in the analysis, etc. 
+
+
+### Design Tactics
+* Think like a pipeline for your flow
+* Project flow with makefiles
+* Everything in code: all the changes to the data are written in an executable file. If it's not in code, how are you going to remember it? You can't depend on yourself to remember something that needs to be done. Not in documentation, because code evolves much faster than documentation. You will thus not know if the documentation follows exactly what is happening.
+* Simpler is better, but don't take this to the extreme. 
+* Explicit is better than implicit, but don't take this to the extreme. 
+* Exceptions are bad but sometimes necessary, but don't take this to the extreme. 
+
+
+* Use Unix, bash, ssh. 
+* Get conformable with the terminal. Your project will be available everywhere.
+* Separate data from logic. 
+
+### The Problems with documentation
+Documentation for code is never complete, on point, up to date. You will never know if the documentation is reliable because the probability of a mismatch is too big given how we behave when coding. We should not trust ourselves, because too many mistakes happen. 
+
+The goal of documentation, making clear what you are going, is great and incredibly important. However, it is the way we satisfy this goal that leads to deception.
+
+For things that do not change much, like input data, exported data and common libraries, classic documentation is appropriate. However, it is for code that most likely changes extremely often that this will not do. In fact, a good project is self-documenting. 
+
+On version control, you should keep track of the *process* of doing the project: completeness, todos, bugs, receiving data, shipping results. Do not document the content of a project in version control, because you can understand the content simply by reading the content. It is useless to repeat yourself twice. 
+
+
+### Code Flow Structure
+
+* **Import**: Read data from `input` with `src` files and write to `output`
+  * This largely consists in reading all types of different data and writing to a rectangular .csv file.
+
+* **Clean**: The data from `output` in the **import** task goes into to `input` directory of the **clean** task. 
+  * Do you notice the linear flow here? 
+
+... and so on.
+
+
+### Self-Documentation, symbolic links and metadata. 
+The way you get your tasks done is with structure, not documentation. You need to tie your tasks together in a coherent and consistent manner in order to facilitate the integration of others and you're eventual reintegration to your project.
+
+Symlinks show the relationship among tasks.
+Task names describe what happens in a task.
+Nothing should be done by hand -- put down the mouse. 
+
+### Symlinks
+
+
+### Makefiles
+This is allow you to use the command line without specific execution code. All you need to call is the makefile, and for all your projects. 

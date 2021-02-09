@@ -2,11 +2,11 @@
 bio: USC
 education:
   courses:
-  - course: Ph.D. in Political Science
+  - course: Ph.D., Political Science
     institution: University of Southern California
-    year: Quantitative Methods
-  - course: BSc. in Political Science, Hon.
-    institution: University of Montreal
+    year:
+  - course: BSc., Political Science, Hon.
+    institution: Université de Montréal
     year: 2020
 email: "bghafour [at] usc.edu"
 highlight_name: false
@@ -24,7 +24,7 @@ social:
   link: mailto:bghafour@usc.edu
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/BijeanGh
+  link: https://twitter.com/bijean_
 - icon: github
   icon_pack: fab
   link: https://github.com/bijeanghafouri
@@ -37,7 +37,7 @@ user_groups:
 - Principal Investigators
 ---
 
-Bijean Ghafouri is a Provost Doctoral Fellow at the University of Southern California, Los Angeles. Before starting his Ph.D., he completed an undergraduate degree at the University of Montreal. In 2019-2020, he was named a Fulbright-Killam Fellow and spent a semester at the Center for Data Science at American University, DC.
+Bijean Ghafouri is a Provost Doctoral Fellow at the University of Southern California, Los Angeles. Before starting his Ph.D., he completed an undergraduate degree at the University of Montreal. During the 2019-2020 academic year, he was Fulbright-Killam Fellow and spent a semester at the Center for Data Science at American University, DC.
 
 His current research focuses on developing and using computational methods for electoral persuasion, campaigns and understanding political behavior. Methodologically, he analyzes big data on social media with text and network analysis. He is a member of the Networks & Society + Humans & Machines lab in the Machine Intelligence and Data Science (MINDS) group at the Information Sciences Institute. 
 
