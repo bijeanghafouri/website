@@ -37,7 +37,7 @@ user_groups:
 - Principal Investigators
 ---
 
-Bijean Ghafouri is a Provost Doctoral Fellow at the University of Southern California, Los Angeles. Before starting his Ph.D., he completed an undergraduate degree at the University of Montreal. During the 2019-2020 academic year, he was Fulbright-Killam Fellow and spent a semester at the Center for Data Science at American University, DC.
+Bijean Ghafouri is a Provost Doctoral fellow at the University of Southern California and a FRQRC fellow. Before starting his Ph.D., he completed an undergraduate degree at the University of Montreal. During the 2019-2020 academic year, he was Fulbright-Killam Fellow and spent a semester at the Center for Data Science at American University, DC.
 
 His current research focuses on developing and using computational methods to understand electoral persuasion, campaigns, political communication and behavior. Methodologically, he analyzes big data on social media with text and network analysis. He is a member of the Networks & Society + Humans & Machines lab in the Machine Intelligence and Data Science (MINDS) group at the Information Sciences Institute. 
 
