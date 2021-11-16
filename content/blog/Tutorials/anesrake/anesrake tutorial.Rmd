@@ -1,0 +1,124 @@
+---
+title: Survey raking with {anesrake}
+author: "Bijean Ghafouri"
+lastmod: 15/11/2021
+output: 
+  html_document:
+  theme: cosmo
+  highlight: tango
+---
+
+# {anesrake} R Package Tutorial 
+
+When using samples in surveys, we are often faced with a representativeness issue. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on the true population values. 
+
+The following tutorial shows how to use {anesrake}, an r package that computes the weights for you!
+
+You want to identify variables, often demographic, to weight on. The software will compare the variables in your sample and in the population to compute the weights. Then, you want to check on these weights. Do you observe weights that seem too high? Some will argue that you should truncate these weights, but this seems to be an open debate. 
+
+
+For more information on the package, please refer to the following document: https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf
+
+
+```{r, message = F}
+require(pacman)
+p_load(tidyverse, anesrake, weights)
+dat <- read_csv('/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/anesrake/donations.csv')
+dat <- as.data.frame(dat)
+
+# Set target variables as factors (important!)
+dat$income <- as.factor(dat$income)
+dat$education <- as.factor(dat$education)
+```
+
+
+# Data simulation
+First, we need to find our population-level estimates. In some cases, you will have access to population-level data from which you can draw your point estimates. However, you are likely to not have direct access to these data. You will need to find these statistics from other sources. 
+
+Here, I use data from the United States census to find the proportions of each category in my variables. I find [population-level education levels here](https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html), and [income levels here](https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/). 
+
+We need to find population-level marginal proportions for variables we will be weighting on. In this example, we will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, or others. Also, note that these categories are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways. 
+
+```{r}
+income <- c('20k', '50k', '100k')
+income_prop <- c(.35, .50, .15)
+education <- c('highschool', 'college', 'graduate')
+education_prop <- c(.376, .497, .127)
+population <- data_frame(income, education, income_prop, education_prop)
+```
+
+
+We identify the list of variables we want to weight on by creating a list of 'targets'. It is important to make sure that the variable names in the dataset and in the population are the same.
+```{r}
+target <- with(population, list(
+  income = weights::wpct(income, income_prop),
+  education  = weights::wpct(education, education_prop)
+))
+```
+
+
+Now that the population-level proportions are dealt with, we can take a look at our survey results. Using the `weights::wpct` function, let's estimate the proportions of our target variables in the survey. 
+```{r}
+weights::wpct(dat$income)
+weights::wpct(dat$education)
+```
+
+
+How do our survey proportions compare to our population proportions?
+```{r}
+target$income
+target$education
+```
+Seems like we have an over-representation of respondents with an income between 50k and 100k, and an over-representation of graduate and college students. Well, this is what raking is for -- let's fix this! 
+
+
+
+The `{anesrake}` R package uses the ANES weighting algorithm to provide weights to any sample. We computed all the necessary inputs above. All we need to do is plug-and-play. There are many function arguments we can specify that I do not include here. The  `weightvec` argument allows us to supply a vector of weights if we are using a dataset that already offers weights. We could also use the `filter` argument to supply a binary vector indicating which observations to include/exclude for weighting. For example, we may want to exclude observations for which the respondent did not provide an answer to the outcome question. 
+
+
+```{r}
+raking <- anesrake(target,                        # target list identified above
+                    dat,                          # survey dataset 
+                    dat$caseid,                   # unique identifier for each respondent (1:nrow(dat))
+                    cap = 5,                      # Maximum value for any given weight
+                    choosemethod = "total",       # How are parameters compared for selection (other options include 'average' and 'max')
+                    type = "pctlim",              # What targets should be used to weight 
+                    pctlim = 0.05                 # Threshold for deviation
+                    )
+raking_summary <- summary(raking)
+raking_summary
+```
+
+
+
+We've not got our raking results. Let's look at the specifics for each target variable. 
+```{r}
+raking_summary$income
+raking_summary$education
+
+```
+
+We can also look at the general effect weighting had on our sample. We see that weighting caused a 96.6% increase in the variance. 
+```{r}
+raking_summary$general.design.effect
+```
+
+
+With these weights, we are able to append the weights vector to our survey data.
+```{r}
+# Create weights vector and attach to dataset 
+dat$weights <- raking$weightvec
+```
+
+
+
+What is the effect of weighting on our outcome? (In this example, the outcome refers to donations. 1 = respondent would donate to a political party, 0 = respondent would not donate to a political party)
+```{r}
+wpct(dat$yhat)
+wpct(dat$yhat, dat$weights)
+```
+
+If we compare the above result with our original outcome, we see that our sample overestimates the proportion of individuals that would donate to a political party. This is likely caused by an oversample of college graduates and high-income earners. 
+
+
+There we go! We now know how to weight our survey samples with the `{anesrake}` R package.

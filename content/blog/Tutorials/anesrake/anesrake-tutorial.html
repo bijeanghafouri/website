@@ -1,0 +1,143 @@
+<script src="anesrake-tutorial_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="anesrake-r-package-tutorial" class="section level1">
+<h1>{anesrake} R Package Tutorial</h1>
+<p>When using samples in surveys, we are often faced with a representativeness issue. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on the true population values.</p>
+<p>The following tutorial shows how to use {anesrake}, an r package that computes the weights for you!</p>
+<p>You want to identify variables, often demographic, to weight on. The software will compare the variables in your sample and in the population to compute the weights. Then, you want to check on these weights. Do you observe weights that seem too high? Some will argue that you should truncate these weights, but this seems to be an open debate.</p>
+<p>For more information on the package, please refer to the following document: <a href="https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf" class="uri">https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf</a></p>
+<pre class="r"><code>require(pacman)
+p_load(tidyverse, anesrake, weights)
+dat &lt;- read_csv(&#39;/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/anesrake/donations.csv&#39;)
+dat &lt;- as.data.frame(dat)
+
+# Set target variables as factors (important!)
+dat$income &lt;- as.factor(dat$income)
+dat$education &lt;- as.factor(dat$education)</code></pre>
+</div>
+<div id="data-simulation" class="section level1">
+<h1>Data simulation</h1>
+<p>First, we need to find our population-level estimates. In some cases, you will have access to population-level data from which you can draw your point estimates. However, you are likely to not have direct access to these data. You will need to find these statistics from other sources.</p>
+<p>Here, I use data from the United States census to find the proportions of each category in my variables. I find <a href="https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html">population-level education levels here</a>, and <a href="https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/">income levels here</a>.</p>
+<p>We need to find population-level marginal proportions for variables we will be weighting on. In this example, we will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, or others. Also, note that these categories are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways.</p>
+<pre class="r"><code>income &lt;- c(&#39;20k&#39;, &#39;50k&#39;, &#39;100k&#39;)
+income_prop &lt;- c(.35, .50, .15)
+education &lt;- c(&#39;highschool&#39;, &#39;college&#39;, &#39;graduate&#39;)
+education_prop &lt;- c(.376, .497, .127)
+population &lt;- data_frame(income, education, income_prop, education_prop)</code></pre>
+<pre><code>## Warning: `data_frame()` was deprecated in tibble 1.1.0.
+## Please use `tibble()` instead.</code></pre>
+<p>We identify the list of variables we want to weight on by creating a list of ‘targets’. It is important to make sure that the variable names in the dataset and in the population are the same.</p>
+<pre class="r"><code>target &lt;- with(population, list(
+  income = weights::wpct(income, income_prop),
+  education  = weights::wpct(education, education_prop)
+))</code></pre>
+<p>Now that the population-level proportions are dealt with, we can take a look at our survey results. Using the <code>weights::wpct</code> function, let’s estimate the proportions of our target variables in the survey.</p>
+<pre class="r"><code>weights::wpct(dat$income)</code></pre>
+<pre><code>##      100k       20k       50k 
+## 0.2058824 0.4325260 0.3615917</code></pre>
+<pre class="r"><code>weights::wpct(dat$education)</code></pre>
+<pre><code>##    college   graduate highschool 
+##  0.5432526  0.3460208  0.1107266</code></pre>
+<p>How do our survey proportions compare to our population proportions?</p>
+<pre class="r"><code>target$income</code></pre>
+<pre><code>## 100k  20k  50k 
+## 0.15 0.35 0.50</code></pre>
+<pre class="r"><code>target$education</code></pre>
+<pre><code>##    college   graduate highschool 
+##      0.497      0.127      0.376</code></pre>
+<p>Seems like we have an over-representation of respondents with an income between 50k and 100k, and an over-representation of graduate and college students. Well, this is what raking is for – let’s fix this!</p>
+<p>The <code>{anesrake}</code> R package uses the ANES weighting algorithm to provide weights to any sample. We computed all the necessary inputs above. All we need to do is plug-and-play. There are many function arguments we can specify that I do not include here. The <code>weightvec</code> argument allows us to supply a vector of weights if we are using a dataset that already offers weights. We could also use the <code>filter</code> argument to supply a binary vector indicating which observations to include/exclude for weighting. For example, we may want to exclude observations for which the respondent did not provide an answer to the outcome question.</p>
+<pre class="r"><code>raking &lt;- anesrake(target,                        # target list identified above
+                    dat,                          # survey dataset 
+                    dat$caseid,                   # unique identifier for each respondent (1:nrow(dat))
+                    cap = 5,                      # Maximum value for any given weight
+                    choosemethod = &quot;total&quot;,       # How are parameters compared for selection (other options include &#39;average&#39; and &#39;max&#39;)
+                    type = &quot;pctlim&quot;,              # What targets should be used to weight 
+                    pctlim = 0.05                 # Threshold for deviation
+                    )</code></pre>
+<pre><code>## [1] &quot;Raking converged in 27 iterations&quot;</code></pre>
+<pre class="r"><code>raking_summary &lt;- summary(raking)
+raking_summary</code></pre>
+<pre><code>## $convergence
+## [1] &quot;Complete convergence was achieved after 27 iterations&quot;
+## 
+## $base.weights
+## [1] &quot;No Base Weights Were Used&quot;
+## 
+## $raking.variables
+## [1] &quot;income&quot;    &quot;education&quot;
+## 
+## $weight.summary
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.2557  0.5272  0.6540  1.0000  1.3487  5.0001 
+## 
+## $selection.method
+## [1] &quot;variable selection conducted using _pctlim_ - discrepancies selected using _total_.&quot;
+## 
+## $general.design.effect
+## [1] 1.966204
+## 
+## $income
+##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+##       Orig. Disc.
+## 100k  -0.05588235
+## 20k   -0.08252595
+## 50k    0.13840830
+## Total  0.27681661
+## 
+## $education
+##            Target Unweighted N Unweighted %    Wtd N Wtd % Change in %
+## college     0.497          628    0.5432526  574.532 0.497  -0.0462526
+## graduate    0.127          400    0.3460208  146.812 0.127  -0.2190208
+## highschool  0.376          128    0.1107266  434.656 0.376   0.2652734
+## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
+##             Resid. Disc. Orig. Disc.
+## college    -5.551115e-17  -0.0462526
+## graduate    0.000000e+00  -0.2190208
+## highschool  0.000000e+00   0.2652734
+## Total       5.551115e-17   0.5305467</code></pre>
+<p>We’ve not got our raking results. Let’s look at the specifics for each target variable.</p>
+<pre class="r"><code>raking_summary$income</code></pre>
+<pre><code>##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+##       Orig. Disc.
+## 100k  -0.05588235
+## 20k   -0.08252595
+## 50k    0.13840830
+## Total  0.27681661</code></pre>
+<pre class="r"><code>raking_summary$education</code></pre>
+<pre><code>##            Target Unweighted N Unweighted %    Wtd N Wtd % Change in %
+## college     0.497          628    0.5432526  574.532 0.497  -0.0462526
+## graduate    0.127          400    0.3460208  146.812 0.127  -0.2190208
+## highschool  0.376          128    0.1107266  434.656 0.376   0.2652734
+## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
+##             Resid. Disc. Orig. Disc.
+## college    -5.551115e-17  -0.0462526
+## graduate    0.000000e+00  -0.2190208
+## highschool  0.000000e+00   0.2652734
+## Total       5.551115e-17   0.5305467</code></pre>
+<p>We can also look at the general effect weighting had on our sample. We see that weighting caused a 96.6% increase in the variance.</p>
+<pre class="r"><code>raking_summary$general.design.effect</code></pre>
+<pre><code>## [1] 1.966204</code></pre>
+<p>With these weights, we are able to append the weights vector to our survey data.</p>
+<pre class="r"><code># Create weights vector and attach to dataset 
+dat$weights &lt;- raking$weightvec</code></pre>
+<p>What is the effect of weighting on our outcome? (In this example, the outcome refers to donations. 1 = respondent would donate to a political party, 0 = respondent would not donate to a political party)</p>
+<pre class="r"><code>wpct(dat$yhat)</code></pre>
+<pre><code>##         0         1 
+## 0.8132635 0.1867365</code></pre>
+<pre class="r"><code>wpct(dat$yhat, dat$weights)</code></pre>
+<pre><code>##         0         1 
+## 0.8623287 0.1376713</code></pre>
+<p>If we compare the above result with our original outcome, we see that our sample overestimates the proportion of individuals that would donate to a political party. This is likely caused by an oversample of college graduates and high-income earners.</p>
+<p>There we go! We now know how to weight our survey samples with the <code>{anesrake}</code> R package.</p>
+</div>
