@@ -10,12 +10,11 @@ output:
 
 # {anesrake} R Package Tutorial 
 
-When using samples in surveys, we are often faced with a representativeness issue. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on the true population values. 
+We are often faced with a representativeness issue when using samples in surveys. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.
 
-The following tutorial shows how to use {anesrake}, an r package that computes the weights for you!
+The following tutorial shows how to use `{anesrake}`, an r package that computes the weights for you!
 
-You want to identify variables, often demographic, to weight on. The software will compare the variables in your sample and in the population to compute the weights. Then, you want to check on these weights. Do you observe weights that seem too high? Some will argue that you should truncate these weights, but this seems to be an open debate. 
-
+The goal is to identify variables (often demographic) to weight on. The statistical software will compare the variables in your sample to the population to compute the weights. 
 
 For more information on the package, please refer to the following document: https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf
 
@@ -35,11 +34,11 @@ dat$education <- as.factor(dat$education)
 # Data simulation
 First, we need to find our population-level estimates. In some cases, you will have access to population-level data from which you can draw your point estimates. However, you are likely to not have direct access to these data. You will need to find these statistics from other sources. 
 
-Here, I use data from the United States census to find the proportions of each category in my variables. I find [population-level education levels here](https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html), and [income levels here](https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/). 
+In this example, I use data from the United States census to find the proportions of each category in my variables. I find [population-level education levels here](https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html), and [income levels here](https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/). 
 
-We need to find population-level marginal proportions for variables we will be weighting on. In this example, we will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, or others. Also, note that these categories are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways. 
+From census data, we can find population-level marginal proportions for the variables we will weight on. We will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, etc. Also, note that these categories are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways. 
 
-```{r}
+```{r, message = F}
 income <- c('20k', '50k', '100k')
 income_prop <- c(.35, .50, .15)
 education <- c('highschool', 'college', 'graduate')
