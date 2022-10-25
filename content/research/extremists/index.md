@@ -13,7 +13,8 @@ publishDate: "2021-01-01T00:00:00Z"
 summary: (Working Paper) In this study, I propose the Downstream extremism theory, a novel explanation to why political extremists take a crucial role in electoral campaigns. I argue that political elites take cues from extremist voters, who then give cues to moderate voters. 
 tags: Politcal extremism, campaigns, computational social science, regression-discontinuity
 title: The role of political extremists in electoral campaigns
-%url_pdf: /research/political-extremists-draft.pdf
+[comment]: <> (url_pdf: /research/political-extremists-draft.pdf)
+
 ---
 
 {{% alert note %}}

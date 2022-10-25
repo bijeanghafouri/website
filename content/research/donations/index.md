@@ -13,7 +13,7 @@ publishDate: "2021-01-01T00:00:00Z"
 summary: (Working Paper) This  study  aims  at  understanding  how  persuasion  effects  are  used  to  solicit  campaign contributions with survey and field experiments.
 tags: Persuasion, political communication, experiment
 title: The behavioral foundations of donations in politics
-%url_pdf: /research/donations-experiment-draft.pdf
+[comment]: <> (url_pdf: /research/donations-experiment-draft.pdf)
 ---
 
 {{% alert note %}}
