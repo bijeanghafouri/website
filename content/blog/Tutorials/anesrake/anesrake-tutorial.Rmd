@@ -10,11 +10,11 @@ output:
 
 # {anesrake} R Package Tutorial 
 
-We are often faced with a representativeness issue when using samples in surveys. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.
+Survey research is often faced with a representativeness issues in sample. The survey sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.
 
-The following tutorial shows how to use `{anesrake}`, an r package that computes the weights for you!
+The following tutorial shows how to use `{anesrake}`, an r package that computes the weights for you. 
 
-The goal is to identify variables (often demographic) to weight on. The statistical software will compare the variables in your sample to the population to compute the weights. 
+The goal is to identify variables, often demographic, to weight on. The statistical software compares the variables in your sample to the population to compute the weights. 
 
 For more information on the package, please refer to the following document: https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf
 

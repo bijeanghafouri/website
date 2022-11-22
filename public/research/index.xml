@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research | Bijean Ghafouri</title>
+    <link>https://bijean.io/research/</link>
+      <atom:link href="https://bijean.io/research/index.xml" rel="self" type="application/rss+xml" />
+    <description>Research</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Bijean Ghafouri `2019-2022`</copyright><lastBuildDate>Fri, 07 May 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://bijean.io/images/icon_hu51f3082b9266112b12a315c5904e19e0_297440_512x512_fill_lanczos_center_2.png</url>
+      <title>Research</title>
+      <link>https://bijean.io/research/</link>
+    </image>
+    
+    <item>
+      <title>The behavioral foundations of donations in politics</title>
+      <link>https://bijean.io/research/donations/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/research/donations/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This is a working paper, please do not cite without author&amp;rsquo;s permission.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The role of political extremists in electoral campaigns</title>
+      <link>https://bijean.io/research/extremists/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/research/extremists/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This is a working paper, please do not cite without author&amp;rsquo;s permission.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

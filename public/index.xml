@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bijean Ghafouri</title>
+    <link>https://bijean.io/</link>
+      <atom:link href="https://bijean.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bijean Ghafouri</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Bijean Ghafouri `2019-2022`</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://bijean.io/images/icon_hu51f3082b9266112b12a315c5904e19e0_297440_512x512_fill_lanczos_center_2.png</url>
+      <title>Bijean Ghafouri</title>
+      <link>https://bijean.io/</link>
+    </image>
+    
+    <item>
+      <title>Example Page 1</title>
+      <link>https://bijean.io/courses/example/example1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      <guid>https://bijean.io/courses/example/example1/</guid>
+      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Page 2</title>
+      <link>https://bijean.io/courses/example/example2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      <guid>https://bijean.io/courses/example/example2/</guid>
+      <description>&lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
+&lt;h2 id=&#34;tip-3&#34;&gt;Tip 3&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+&lt;h2 id=&#34;tip-4&#34;&gt;Tip 4&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>https://bijean.io/project/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/project/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://bijean.io/talk/example/</link>
+      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <guid>https://bijean.io/talk/example/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The behavioral foundations of donations in politics</title>
+      <link>https://bijean.io/research/donations/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/research/donations/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This is a working paper, please do not cite without author&amp;rsquo;s permission.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The role of political extremists in electoral campaigns</title>
+      <link>https://bijean.io/research/extremists/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/research/extremists/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This is a working paper, please do not cite without author&amp;rsquo;s permission.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Workflow Structure</title>
+      <link>https://bijean.io/blog/tutorials/workflow/workflow/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/blog/tutorials/workflow/workflow/</guid>
+      <description>
+&lt;link href=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;em&gt;Programs must be written for people to read, and only incidentally for machines to execute.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;― Harold Abelson, Structure and Interpretation of Computer Programs&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;How you &lt;a href=&#34;https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/&#34;&gt;organize&lt;/a&gt; your data analysis project is crucial for many reasons. Without a pre-defined structure to your projects, you are likely to forget years or even months from now what you have done looking back at projects. This may be the case when you get back on a dormant project, or receive major revisions in an R&amp;amp;R six months after submission. Projects that involve collaboration between multiple members should also have a unified structure understand of how their analysis is structured to avoid any mistake.&lt;/p&gt;
+&lt;p&gt;We call this your &lt;a href=&#34;https://hrdag.org/tech-notes/harmful.html&#34;&gt;workflow&lt;/a&gt;. Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between &lt;strong&gt;tasks&lt;/strong&gt;. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level.
+&lt;/p&gt;
+&lt;div id=&#34;tasks-structure&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Tasks structure&lt;/h3&gt;
+&lt;p&gt;The first task is to &lt;strong&gt;import&lt;/strong&gt; your data. This tasks has at minimum three directories: &lt;code&gt;input&lt;/code&gt;, &lt;code&gt;output&lt;/code&gt; and &lt;code&gt;src&lt;/code&gt; (source).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;input&lt;/code&gt; contains raw files for task to read&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;output&lt;/code&gt; contains files ready to go&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;src&lt;/code&gt; contains scripts to read input and write to output&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s see what a basic folder structure looks like. These folder names may change based on field or personal preference, but here they are mostly standard.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  
+│
+└─── docs
+└─── input
+└─── output
+└─── src&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;input&lt;/code&gt; never get modified. You will only drop raw data files into it. This is the whole point of having scripts in &lt;code&gt;src&lt;/code&gt;, to read and modify the input. Once transformed, we can place the new files in &lt;code&gt;output&lt;/code&gt;. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files. Furthermore, the objective of &lt;code&gt;src&lt;/code&gt; is not to clean and manipulate data on a deep level, but rather to create a structured, rectangular datasets ready for further analyses, dumped into &lt;code&gt;output&lt;/code&gt;. In subsequent tasks, you should take in the files from &lt;code&gt;output&lt;/code&gt; as inputs to clean and analyze specifically for the goal of this part. You can imagine this as a chain-rule for a structured flow of your data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;structuring-your-task-in-r&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Structuring your task in &lt;code&gt;R&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;To create these folder, you can run the following commands. This should be at the top of any script.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ------------ packages  ----------
+require(pacman)
+pacman::p_load(here)
+
+# ---------- workflow -------------
+# set directory
+path &amp;lt;- here::here()
+setwd(path)
+
+# set up file paths 
+dir.create(paste0(path,&amp;quot;/&amp;quot;,&amp;quot;input&amp;quot;,sep=&amp;quot;&amp;quot;),showWarnings = T)
+dir.create(paste0(path,&amp;quot;/&amp;quot;,&amp;quot;output&amp;quot;,sep=&amp;quot;&amp;quot;),showWarnings = T)
+dir.create(paste0(path,&amp;quot;/&amp;quot;,&amp;quot;src&amp;quot;,sep=&amp;quot;&amp;quot;),showWarnings = T)
+pathin = paste0(path,&amp;quot;/&amp;quot;,&amp;quot;input&amp;quot;,sep=&amp;quot;&amp;quot;)
+pathout = paste0(path,&amp;quot;/&amp;quot;,&amp;quot;ouput&amp;quot;,sep=&amp;quot;&amp;quot;)
+pathsrc = paste0(path,&amp;quot;/&amp;quot;,&amp;quot;scr&amp;quot;,sep=&amp;quot;&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will create three folders for each component of this tasks. You may notice that I set the directory with &lt;code&gt;{here}&lt;/code&gt;. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that &lt;a href=&#34;https://i.imgur.com/jKWxztR.png&#34;&gt;everyone&lt;/a&gt; has different directory structures, this &lt;a href=&#34;https://github.com/jennybc/here_here#readme&#34;&gt;package&lt;/a&gt; allows you to limit the exposure of your local setup.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;input&lt;/code&gt; folder will contain &lt;strong&gt;all&lt;/strong&gt; data files you need for this project (all subsequent tasks). Then, you will read them in your script, contained in the &lt;code&gt;src&lt;/code&gt; folder, to then export to the &lt;code&gt;output&lt;/code&gt; folder (often in a .csv format). Following tasks will read in data files from &lt;code&gt;output&lt;/code&gt; that they each need.&lt;/p&gt;
+&lt;p&gt;I have the following structure for a single analysis task that comes directly from the &lt;a href=&#34;https://hrdag.org/&#34;&gt;HRDA Group&lt;/a&gt;. You can have many analysis tasks, depending on the nature of your project.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── import
+│   ├── Makefile
+│   ├── input
+│   ├── output
+│   └── src
+├── clean
+│   ├── Makefile
+│   ├── input
+│   ├── output
+│   └── src
+├── model
+│   ├── Makefile
+│   ├── input
+│   ├── output
+│   └── src
+└── write
+    ├── Makefile
+    ├── input
+    ├── output
+    └── src&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The goal of the following structure is create a linear flow to how your data is transformed. For example, your data from into the &lt;code&gt;import&lt;/code&gt; directory raw. The &lt;code&gt;clean&lt;/code&gt; directory will take in the data from the output folder of &lt;code&gt;import&lt;/code&gt; and process it. The &lt;code&gt;model&lt;/code&gt; directory will then itself take the output data from &lt;code&gt;clean&lt;/code&gt; and process it. In this step, you will likely create a &lt;code&gt;tables&lt;/code&gt; and &lt;code&gt;figs&lt;/code&gt; folder in the output folder. Finally, &lt;code&gt;write&lt;/code&gt; will follow the same flow. For specific file names, I recommend following these &lt;a href=&#34;https://speakerdeck.com/jennybc/how-to-name-files&#34;&gt;best practices&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Remember, this structure is for one task only. Depending on the nature of your project, or personal preference, you may need only one task or more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;self-documentation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Self-Documentation&lt;/h3&gt;
+&lt;p&gt;Many will dislike the use of documentation in the classic format of a .txt file that you update regularly as you move forward with your project. You probably experienced this where, at the end of the day, your code almost never keeps up with your documentation. This is why it is strongly recommended to &lt;strong&gt;self-document&lt;/strong&gt; your code within your scripts. This will allow you to document your code within your script as-you-go. Obviously, you will continue to keep track of what you do in your documentation. The difference is that your documentation will be higher-level instructions, while your self-documentation will follow your script closely. In the case where your documentation is out-of-date, you will be able to rely on your script to reconstruct the steps of your project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;optional-directories&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Optional directories&lt;/h3&gt;
+&lt;p&gt;You may wish to incorporate personal workflow items into this system.
+First, it is very well possible that you use notebooks or markdown files to test your code as you write. Although this might be a very good solution for testing, it is recommended that you always have a final script that contains all your chunks in the &lt;code&gt;src&lt;/code&gt; folder. If you use notebooks, put these .rmd or .ipynb files in a &lt;code&gt;note&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;You may have noticed that the import task structure contains a &lt;code&gt;docs&lt;/code&gt; directory. This is for any documentation that comes with data you are using. This will often be the case with survey data, or data from other public sources.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;makefile-and-drake&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Makefile and &lt;code&gt;{drake}&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;You may notice that each task contains a makefile. This file is to automate the execution of all the scripts from the &lt;code&gt;src&lt;/code&gt; folder. Although in other programming languages you might need to manually create a makefile, in &lt;code&gt;R&lt;/code&gt; you can use the &lt;code&gt;{drake}&lt;/code&gt; &lt;a href=&#34;https://milesmcbain.xyz/posts/the-drake-post/&#34;&gt;package&lt;/a&gt; (more info &lt;a href=&#34;https://www.youtube.com/watch?v=4vu8h_Zh8Wg&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;There a numerous tools to create and automate workflow styles. Many use targets, like &lt;code&gt;{drake}&lt;/code&gt;. Here are a few:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://projecttemplate.net/&#34;&gt;ProjectTemplate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jdblischak.github.io/workflowr/&#34;&gt;workflowr&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/benmarwick/rrtools&#34;&gt;rrtools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/vimc/orderly&#34;&gt;ordely&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/MilesMcBain/fnmate&#34;&gt;fnmate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/milesmcbain/dflow&#34;&gt;dflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ropensci.org/drake/&#34;&gt;drake&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pirategrunt.com/represtools/&#34;&gt;represtool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itsalocke.com/starters/&#34;&gt;starters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;{drake}&lt;/code&gt; package makes your code focus on functions, rather than simple scripts. Although it has the same intention as makefiles, the package’s logic is embedded within a dataframe, following &lt;code&gt;R&lt;/code&gt;’s ecosystem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;notebooks&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Notebooks&lt;/h3&gt;
+&lt;p&gt;Notebooks combines the code, text and visualization in one document. This may help with reproducibility because each chunk is immediately followed by its output. So what are the downsides? The main issue with notebooks is the lack of structure in running chunks. Although they are sequentially ordered, you are most probably running them in all sorts of ways to fix bugs or add features. This lack of consistency is likely to produce more problems than not. For more on problems associated with notebooks, see this &lt;a href=&#34;https://www.youtube.com/watch?v=7jiPeIFXb6U&#34;&gt;talk&lt;/a&gt; by Joel Grus.&lt;/p&gt;
+&lt;p&gt;Notebooks remain useful for the courses, exploratory data analysis, reports (where more text than code) and dashboards.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;project-as-an-r-package&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Project as an &lt;code&gt;R&lt;/code&gt; Package&lt;/h3&gt;
+&lt;p&gt;As per McBain’s &lt;a href=&#34;https://milesmcbain.xyz/posts/an-okay-idea/&#34;&gt;blog post&lt;/a&gt;, although creating an &lt;code&gt;R&lt;/code&gt; package is used by many, there are some pitfalls associated with it. Although it is a great way to automate your project with testing and solid structure, there remains the little payoff, and the signal to noise ratio is simply much too low. Another issue is the fact that not everyone is comfortable with the package environment, even if they are a domain expert. This defeats the purpose of reproducibility since the public’s access becomes limited.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;alternatives-to-project-structure&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Alternatives to project structure&lt;/h3&gt;
+&lt;p&gt;We will often see directories and project structures that follow a flow based on the content of the folders rather than the order of the project itself. For example, projects will be organized with the following folders: &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;analysis&lt;/code&gt;, &lt;code&gt;tables-figures&lt;/code&gt;. Although this does fits the purpose of reproducibility, it does not flow with the logic of the project. You should have different folders for different &lt;strong&gt;tasks&lt;/strong&gt;. In the example above, many tasks can be included in the &lt;code&gt;analysis&lt;/code&gt; folder, like cleaning and modeling. Some may point out that this is just a discrepancy in the placement of folders in different directories, which is essentially the case. However, the problem lies within how someone who has never worked on this project will be able to understand its logic.&lt;/p&gt;
+&lt;p&gt;Finally, you can find great posts &lt;a href=&#34;https://chrisvoncsefalvay.com/2018/08/09/structuring-r-projects/&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://the-turing-way.netlify.app/welcome&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://edwinth.github.io/ADSwR/index.html&#34;&gt;here&lt;/a&gt; to help you structure your projects.&lt;/p&gt;
+&lt;p&gt;At the end of the day, the goal for a clear project structure is to convey what exactly you are doing to everyone else that may have access to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;patrick-balls-principles-of-data-processing&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Patrick Ball’s Principles of Data Processing&lt;/h2&gt;
+&lt;p&gt;This is from his great &lt;a href=&#34;https://www.youtube.com/watch?v=ZSunU9GQdcI&#34;&gt;talk&lt;/a&gt;. Basically, he gives his take on ‘where to put your stuff’.&lt;/p&gt;
+&lt;p&gt;His main argument is that the way documentation is understood makes us take it for granted, when it is actually central to our code. How do we write code and organize projects to know what you did a few months from now? It is also meant to organize your work to facilitate collaboration with colleagues where they will be able to understand &lt;em&gt;exactly&lt;/em&gt; what you are doing.&lt;/p&gt;
+&lt;p&gt;He identifies four goals for statistical workflow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Transparency&lt;/strong&gt;: possible to review every task&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Auditbility: possible to test the result of every task, where the test is often done in a different computer language and by different analyst.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reproducibility: any scientist with the same tools and the same code could recalculate the results and get the same answers.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Scalabilty: ‘more than 2’ input files, updates to your input files, analysts who are going to work on the project, results in the report you will publish, different analyses which derive from the inputs, languages needed in the analysis, etc.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;design-tactics&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Design Tactics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Think like a pipeline for your flow&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Project flow with makefiles&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Everything in code: all the changes to the data are written in an executable file. If it’s not in code, how are you going to remember it? You can’t depend on yourself to remember something that needs to be done. Not in documentation, because code evolves much faster than documentation. You will thus not know if the documentation follows exactly what is happening.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Simpler is better, but don’t take this to the extreme.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Explicit is better than implicit, but don’t take this to the extreme.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Exceptions are bad but sometimes necessary, but don’t take this to the extreme.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use Unix, bash, ssh.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Get conformable with the terminal. Your project will be available everywhere.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Separate data from logic.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-problems-with-documentation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Problems with documentation&lt;/h3&gt;
+&lt;p&gt;Documentation for code is never complete, on point, up to date. You will never know if the documentation is reliable because the probability of a mismatch is too big given how we behave when coding. We should not trust ourselves, because too many mistakes happen.&lt;/p&gt;
+&lt;p&gt;The goal of documentation, making clear what you are going, is great and incredibly important. However, it is the way we satisfy this goal that leads to deception.&lt;/p&gt;
+&lt;p&gt;For things that do not change much, like input data, exported data and common libraries, classic documentation is appropriate. However, it is for code that most likely changes extremely often that this will not do. In fact, a good project is self-documenting.&lt;/p&gt;
+&lt;p&gt;On version control, you should keep track of the &lt;em&gt;process&lt;/em&gt; of doing the project: completeness, todos, bugs, receiving data, shipping results. Do not document the content of a project in version control, because you can understand the content simply by reading the content. It is useless to repeat yourself twice.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;code-flow-structure&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Code Flow Structure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Import&lt;/strong&gt;: Read data from &lt;code&gt;input&lt;/code&gt; with &lt;code&gt;src&lt;/code&gt; files and write to &lt;code&gt;output&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;This largely consists in reading all types of different data and writing to a rectangular .csv file.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clean&lt;/strong&gt;: The data from &lt;code&gt;output&lt;/code&gt; in the &lt;strong&gt;import&lt;/strong&gt; task goes into to &lt;code&gt;input&lt;/code&gt; directory of the &lt;strong&gt;clean&lt;/strong&gt; task.
+&lt;ul&gt;
+&lt;li&gt;Do you notice the linear flow here?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;… and so on.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;self-documentation-symbolic-links-and-metadata.&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Self-Documentation, symbolic links and metadata.&lt;/h3&gt;
+&lt;p&gt;The way you get your tasks done is with structure, not documentation. You need to tie your tasks together in a coherent and consistent manner in order to facilitate the integration of others and you’re eventual reintegration to your project.&lt;/p&gt;
+&lt;p&gt;Symlinks show the relationship among tasks.
+Task names describe what happens in a task.
+Nothing should be done by hand – put down the mouse.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;symlinks&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Symlinks&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;makefiles&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Makefiles&lt;/h3&gt;
+&lt;p&gt;This is allow you to use the command line without specific execution code. All you need to call is the makefile, and for all your projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Sources</title>
+      <link>https://bijean.io/resources/datasources/</link>
+      <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/resources/datasources/</guid>
+      <description>
+&lt;link href=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://doodles.mountainmath.ca/&#34;&gt;R for Canadians&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://archive.ics.uci.edu/ml/index.php?fbclid=IwAR2CgM30eom1uUQ-93PSe966ML4_YV61EGcp3x93fR5-ecRdcw6R_9tIdlc&#34;&gt;UCI Data Repository&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://data.cityofchicago.org/&#34;&gt;City of Chicago&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ropensci.org/&#34;&gt;Software for Reproducibility&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://bijean.io/resources/tutorials/</link>
+      <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/resources/tutorials/</guid>
+      <description>
+&lt;link href=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://programminghistorian.org/en/lessons/intro-to-bash&#34;&gt;Introduction to Bash and the command line&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://swcarpentry.github.io/shell-novice/&#34;&gt;The Unix Shell&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bigbookofr.com/index.html&#34;&gt;Big Book of R (+100 Books)&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An example preprint / working paper</title>
+      <link>https://bijean.io/publication/preprint/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/publication/preprint/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://bijean.io/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/slides/example/</guid>
+      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-academic&#34;&gt;Create slides in Markdown with Academic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Academic&lt;/a&gt; | &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+Three
+&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/media/boards.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://spectrum.chat/academic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>https://bijean.io/project/external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/project/external-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internal Project</title>
+      <link>https://bijean.io/project/internal-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/project/internal-project/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An example journal article</title>
+      <link>https://bijean.io/publication/journal-article/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An example conference paper</title>
+      <link>https://bijean.io/publication/conference-paper/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/publication/conference-paper/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Survey raking with {anesrake}</title>
+      <link>https://bijean.io/blog/tutorials/anesrake/anesrake-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bijean.io/blog/tutorials/anesrake/anesrake-tutorial/</guid>
+      <description>
+&lt;script src=&#34;https://bijean.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;anesrake-r-package-tutorial&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;{anesrake} R Package Tutorial&lt;/h1&gt;
+&lt;p&gt;We are often faced with a representativeness issue when using samples in surveys. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.&lt;/p&gt;
+&lt;p&gt;The following tutorial shows how to use &lt;code&gt;{anesrake}&lt;/code&gt;, an r package that computes the weights for you!&lt;/p&gt;
+&lt;p&gt;The goal is to identify variables (often demographic) to weight on. The statistical software will compare the variables in your sample to the population to compute the weights.&lt;/p&gt;
+&lt;p&gt;For more information on the package, please refer to the following document: &lt;a href=&#34;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&#34; class=&#34;uri&#34;&gt;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;require(pacman)
+p_load(tidyverse, anesrake, weights)
+dat &amp;lt;- read_csv(&amp;#39;/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/anesrake/donations.csv&amp;#39;)
+dat &amp;lt;- as.data.frame(dat)
+
+# Set target variables as factors (important!)
+dat$income &amp;lt;- as.factor(dat$income)
+dat$education &amp;lt;- as.factor(dat$education)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-simulation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data simulation&lt;/h1&gt;
+&lt;p&gt;First, we need to find our population-level estimates. In some cases, you will have access to population-level data from which you can draw your point estimates. However, you are likely to not have direct access to these data. You will need to find these statistics from other sources.&lt;/p&gt;
+&lt;p&gt;In this example, I use data from the United States census to find the proportions of each category in my variables. I find &lt;a href=&#34;https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html&#34;&gt;population-level education levels here&lt;/a&gt;, and &lt;a href=&#34;https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/&#34;&gt;income levels here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;From census data, we can find population-level marginal proportions for the variables we will weight on. We will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, etc. Also, note that these categories are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;income &amp;lt;- c(&amp;#39;20k&amp;#39;, &amp;#39;50k&amp;#39;, &amp;#39;100k&amp;#39;)
+income_prop &amp;lt;- c(.35, .50, .15)
+education &amp;lt;- c(&amp;#39;highschool&amp;#39;, &amp;#39;college&amp;#39;, &amp;#39;graduate&amp;#39;)
+education_prop &amp;lt;- c(.376, .497, .127)
+population &amp;lt;- data_frame(income, education, income_prop, education_prop)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: `data_frame()` was deprecated in tibble 1.1.0.
+## Please use `tibble()` instead.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We identify the list of variables we want to weight on by creating a list of ‘targets’. It is important to make sure that the variable names in the dataset and in the population are the same.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;target &amp;lt;- with(population, list(
+  income = weights::wpct(income, income_prop),
+  education  = weights::wpct(education, education_prop)
+))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that the population-level proportions are dealt with, we can take a look at our survey results. Using the &lt;code&gt;weights::wpct&lt;/code&gt; function, let’s estimate the proportions of our target variables in the survey.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;weights::wpct(dat$income)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      100k       20k       50k 
+## 0.2058824 0.4325260 0.3615917&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;weights::wpct(dat$education)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    college   graduate highschool 
+##  0.5432526  0.3460208  0.1107266&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;How do our survey proportions compare to our population proportions?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;target$income&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 100k  20k  50k 
+## 0.15 0.35 0.50&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;target$education&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    college   graduate highschool 
+##      0.497      0.127      0.376&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Seems like we have an over-representation of respondents with an income between 50k and 100k, and an over-representation of graduate and college students. Well, this is what raking is for – let’s fix this!&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;{anesrake}&lt;/code&gt; R package uses the ANES weighting algorithm to provide weights to any sample. We computed all the necessary inputs above. All we need to do is plug-and-play. There are many function arguments we can specify that I do not include here. The &lt;code&gt;weightvec&lt;/code&gt; argument allows us to supply a vector of weights if we are using a dataset that already offers weights. We could also use the &lt;code&gt;filter&lt;/code&gt; argument to supply a binary vector indicating which observations to include/exclude for weighting. For example, we may want to exclude observations for which the respondent did not provide an answer to the outcome question.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking &amp;lt;- anesrake(target,                        # target list identified above
+                    dat,                          # survey dataset 
+                    dat$caseid,                   # unique identifier for each respondent (1:nrow(dat))
+                    cap = 5,                      # Maximum value for any given weight
+                    choosemethod = &amp;quot;total&amp;quot;,       # How are parameters compared for selection (other options include &amp;#39;average&amp;#39; and &amp;#39;max&amp;#39;)
+                    type = &amp;quot;pctlim&amp;quot;,              # What targets should be used to weight 
+                    pctlim = 0.05                 # Threshold for deviation
+                    )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Raking converged in 27 iterations&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary &amp;lt;- summary(raking)
+raking_summary&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $convergence
+## [1] &amp;quot;Complete convergence was achieved after 27 iterations&amp;quot;
+## 
+## $base.weights
+## [1] &amp;quot;No Base Weights Were Used&amp;quot;
+## 
+## $raking.variables
+## [1] &amp;quot;income&amp;quot;    &amp;quot;education&amp;quot;
+## 
+## $weight.summary
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.2557  0.5272  0.6540  1.0000  1.3487  5.0001 
+## 
+## $selection.method
+## [1] &amp;quot;variable selection conducted using _pctlim_ - discrepancies selected using _total_.&amp;quot;
+## 
+## $general.design.effect
+## [1] 1.966204
+## 
+## $income
+##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+##       Orig. Disc.
+## 100k  -0.05588235
+## 20k   -0.08252595
+## 50k    0.13840830
+## Total  0.27681661
+## 
+## $education
+##            Target Unweighted N Unweighted %    Wtd N Wtd % Change in %
+## college     0.497          628    0.5432526  574.532 0.497  -0.0462526
+## graduate    0.127          400    0.3460208  146.812 0.127  -0.2190208
+## highschool  0.376          128    0.1107266  434.656 0.376   0.2652734
+## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
+##             Resid. Disc. Orig. Disc.
+## college    -5.551115e-17  -0.0462526
+## graduate    0.000000e+00  -0.2190208
+## highschool  0.000000e+00   0.2652734
+## Total       5.551115e-17   0.5305467&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We’ve not got our raking results. Let’s look at the specifics for each target variable.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$income&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+##       Orig. Disc.
+## 100k  -0.05588235
+## 20k   -0.08252595
+## 50k    0.13840830
+## Total  0.27681661&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$education&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            Target Unweighted N Unweighted %    Wtd N Wtd % Change in %
+## college     0.497          628    0.5432526  574.532 0.497  -0.0462526
+## graduate    0.127          400    0.3460208  146.812 0.127  -0.2190208
+## highschool  0.376          128    0.1107266  434.656 0.376   0.2652734
+## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
+##             Resid. Disc. Orig. Disc.
+## college    -5.551115e-17  -0.0462526
+## graduate    0.000000e+00  -0.2190208
+## highschool  0.000000e+00   0.2652734
+## Total       5.551115e-17   0.5305467&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can also look at the general effect weighting had on our sample. We see that weighting caused a 96.6% increase in the variance.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$general.design.effect&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1.966204&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With these weights, we are able to append the weights vector to our survey data.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create weights vector and attach to dataset 
+dat$weights &amp;lt;- raking$weightvec&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What is the effect of weighting on our outcome? (In this example, the outcome refers to donations. 1 = respondent would donate to a political party, 0 = respondent would not donate to a political party)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wpct(dat$yhat)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##         0         1 
+## 0.8132635 0.1867365&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wpct(dat$yhat, dat$weights)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##         0         1 
+## 0.8623287 0.1376713&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we compare the above result with our original outcome, we see that our sample overestimates the proportion of individuals that would donate to a political party. This is likely caused by an oversample of college graduates and high-income earners.&lt;/p&gt;
+&lt;p&gt;There we go! We now know how to weight our survey samples with the &lt;code&gt;{anesrake}&lt;/code&gt; R package.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

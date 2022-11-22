@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Bijean Ghafouri</title>
+    <link>https://bijean.io/post/</link>
+      <atom:link href="https://bijean.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Bijean Ghafouri `2019-2022`</copyright>
+    <image>
+      <url>https://bijean.io/images/icon_hu51f3082b9266112b12a315c5904e19e0_297440_512x512_fill_lanczos_center_2.png</url>
+      <title>Posts</title>
+      <link>https://bijean.io/post/</link>
+    </image>
+    
+  </channel>
+</rss>

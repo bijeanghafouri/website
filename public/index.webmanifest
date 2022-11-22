@@ -1,0 +1,18 @@
+{
+  "name": "Bijean Ghafouri",
+  "short_name": "Bijean Ghafouri",
+  "lang": "en-us",
+  "theme_color": "#25a5c4",
+  "background_color": "#25a5c4",
+  "icons": [{
+    "src": "/images/icon_hu51f3082b9266112b12a315c5904e19e0_297440_192x192_fill_lanczos_center_2.png",
+    "sizes": "192x192",
+    "type": "image/png"
+    }, {
+    "src": "/images/icon_hu51f3082b9266112b12a315c5904e19e0_297440_512x512_fill_lanczos_center_2.png",
+    "sizes": "512x512",
+    "type": "image/png"
+     }],
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
+}
