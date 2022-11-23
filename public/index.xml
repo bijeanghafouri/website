@@ -534,69 +534,84 @@ Three
       <link>https://bijean.io/blog/tutorials/anesrake/anesrake-tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://bijean.io/blog/tutorials/anesrake/anesrake-tutorial/</guid>
-      <description>
-
-
-&lt;div id=&#34;anesrake-r-package-tutorial&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;{anesrake} R Package Tutorial&lt;/h1&gt;
-&lt;p&gt;Survey research is often faced with a representativeness issues in sample. The survey sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.&lt;/p&gt;
+      <description>&lt;h1 id=&#34;anesrake-r-package-tutorial&#34;&gt;{anesrake} R Package Tutorial&lt;/h1&gt;
+&lt;p&gt;Survey research is often faced with issues related to sample representativeness. The survey sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.&lt;/p&gt;
 &lt;p&gt;The following tutorial shows how to use &lt;code&gt;{anesrake}&lt;/code&gt;, an r package that computes the weights for you.&lt;/p&gt;
 &lt;p&gt;The goal is to identify variables, often demographic, to weight on. The statistical software compares the variables in your sample to the population to compute the weights.&lt;/p&gt;
-&lt;p&gt;For more information on the package, please refer to the following document: &lt;a href=&#34;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&#34; class=&#34;uri&#34;&gt;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a id=&#34;raw-url&#34; href=&#34;https://raw.githubusercontent.com/bijeanghafouri/website/main/content/blog/Tutorials/anesrake/donations.csv&#34;&gt;Download FILE&lt;/a&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;require(pacman)
+&lt;p&gt;For more information on the package, please refer to the following document: &lt;a href=&#34;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&#34;&gt;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s load the packages needed and import the data we will be working with. For this tutorial, we will be using a dataset of survey responses on the political donations. You can &lt;a id=&#34;raw-url&#34; href=&#34;https://raw.githubusercontent.com/bijeanghafouri/website/main/content/blog/Tutorials/anesrake/donations.csv&#34;&gt;download the data here.&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Load packages 
+require(pacman)
 p_load(tidyverse, anesrake, weights)
-dat &amp;lt;- read_csv(&amp;#39;donations.csv&amp;#39;)
+
+# Load data 
+dat &amp;lt;- read_csv(&#39;donations.csv&#39;)
 dat &amp;lt;- as.data.frame(dat)
 
 # Set target variables as factors (important!)
 dat$income &amp;lt;- as.factor(dat$income)
-dat$education &amp;lt;- as.factor(dat$education)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;data-simulation&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Data simulation&lt;/h1&gt;
+dat$education &amp;lt;- as.factor(dat$education)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;data-simulation&#34;&gt;Data simulation&lt;/h1&gt;
 &lt;p&gt;First, we need to find our population-level estimates. In some cases, you will have access to population-level data from which you can draw your point estimates. However, you are likely to not have direct access to these data. You will need to find these statistics from other sources.&lt;/p&gt;
-&lt;p&gt;In this example, I use data from the United States census to find the proportions of each category in my variables. I find &lt;a href=&#34;https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html&#34;&gt;population-level education levels here&lt;/a&gt;, and &lt;a href=&#34;https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/&#34;&gt;income levels here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;From census data, we can find population-level marginal proportions for the variables we will weight on. We will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, etc. Also, note that these categories are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;income &amp;lt;- c(&amp;#39;20k&amp;#39;, &amp;#39;50k&amp;#39;, &amp;#39;100k&amp;#39;)
+&lt;p&gt;In this turorial, I use data from the United States census to find the proportions of each category in my variables. I find &lt;a href=&#34;https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;population-level education levels here&lt;/a&gt;, and &lt;a href=&#34;https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;income levels here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;From census data, we can find population-level marginal proportions for the variables we will weight on. We will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, etc. Note that the variable levels are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Set target variables 
+income &amp;lt;- c(&#39;20k&#39;, &#39;50k&#39;, &#39;100k&#39;)
 income_prop &amp;lt;- c(.35, .50, .15)
-education &amp;lt;- c(&amp;#39;highschool&amp;#39;, &amp;#39;college&amp;#39;, &amp;#39;graduate&amp;#39;)
+education &amp;lt;- c(&#39;highschool&#39;, &#39;college&#39;, &#39;graduate&#39;)
 education_prop &amp;lt;- c(.376, .497, .127)
-population &amp;lt;- data_frame(income, education, income_prop, education_prop)&lt;/code&gt;&lt;/pre&gt;
+population &amp;lt;- data_frame(income, education, income_prop, education_prop)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: `data_frame()` was deprecated in tibble 1.1.0.
-## ℹ Please use `tibble()` instead.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We identify the list of variables we want to weight on by creating a list of ‘targets’. It is important to make sure that the variable names in the dataset and in the population are the same.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;target &amp;lt;- with(population, list(
+## ℹ Please use `tibble()` instead.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We identify the list of variables we want to weight on by creating a list of &amp;lsquo;targets&amp;rsquo;. It is important to make sure that the variable names in the dataset and in the population are the same.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Create target list 
+target &amp;lt;- with(population, list(
   income = weights::wpct(income, income_prop),
   education  = weights::wpct(education, education_prop)
-))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now that the population-level proportions are dealt with, we can take a look at our survey results. Using the &lt;code&gt;weights::wpct&lt;/code&gt; function, let’s estimate the proportions of our target variables in the survey.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;weights::wpct(dat$income)&lt;/code&gt;&lt;/pre&gt;
+))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that the population-level proportions are dealt with, we can take a look at our survey results. Using the &lt;code&gt;weights::wpct&lt;/code&gt; function, let&amp;rsquo;s estimate the proportions of our target variables in the survey.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Weight estimation 
+weights::wpct(dat$income)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##      100k       20k       50k 
-## 0.2058824 0.4325260 0.3615917&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;weights::wpct(dat$education)&lt;/code&gt;&lt;/pre&gt;
+## 0.2058824 0.4325260 0.3615917
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;weights::wpct(dat$education)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##    college   graduate highschool 
-##  0.5432526  0.3460208  0.1107266&lt;/code&gt;&lt;/pre&gt;
+##  0.5432526  0.3460208  0.1107266
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;How do our survey proportions compare to our population proportions?&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;target$income&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;target$income
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 100k  20k  50k 
-## 0.15 0.35 0.50&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;target$education&lt;/code&gt;&lt;/pre&gt;
+## 0.15 0.35 0.50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;target$education
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##    college   graduate highschool 
-##      0.497      0.127      0.376&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Seems like we have an over-representation of respondents with an income between 50k and 100k, and an over-representation of graduate and college students. Well, this is what raking is for – let’s fix this!&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;{anesrake}&lt;/code&gt; R package uses the ANES weighting algorithm to provide weights to any sample. We computed all the necessary inputs above. All we need to do is plug-and-play. There are many function arguments we can specify that I do not include here. The &lt;code&gt;weightvec&lt;/code&gt; argument allows us to supply a vector of weights if we are using a dataset that already offers weights. We could also use the &lt;code&gt;filter&lt;/code&gt; argument to supply a binary vector indicating which observations to include/exclude for weighting. For example, we may want to exclude observations for which the respondent did not provide an answer to the outcome question.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking &amp;lt;- anesrake(target,                        # target list identified above
+##      0.497      0.127      0.376
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Seems like we have an over-representation of respondents with an income between 50k and 100k, and an over-representation of graduate and college students. Well, this is what raking is for &amp;ndash; let&amp;rsquo;s fix this!&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;{anesrake}&lt;/code&gt; R package uses the ANES weighting algorithm to provide weights to any sample. We computed all the necessary parameters above. All we need to do is plug-and-play. There are many function arguments we can specify that I do not include here. The  &lt;code&gt;weightvec&lt;/code&gt; argument allows us to supply a vector of weights if we are using a dataset that already offers weights. We could also use the &lt;code&gt;filter&lt;/code&gt; argument to supply a binary vector indicating which observations to include/exclude for weighting. For example, we may want to exclude observations where respondent did not provide an answer to the outcome question.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;raking &amp;lt;- anesrake(target,                        # target list identified above
                     dat,                          # survey dataset 
                     dat$caseid,                   # unique identifier for each respondent (1:nrow(dat))
                     cap = 5,                      # Maximum value for any given weight
-                    choosemethod = &amp;quot;total&amp;quot;,       # How are parameters compared for selection (other options include &amp;#39;average&amp;#39; and &amp;#39;max&amp;#39;)
+                    choosemethod = &amp;quot;total&amp;quot;,       # How are parameters compared for selection (other options include &#39;average&#39; and &#39;max&#39;)
                     type = &amp;quot;pctlim&amp;quot;,              # What targets should be used to weight 
                     pctlim = 0.05                 # Threshold for deviation
-                    )&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Raking converged in 26 iterations&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary &amp;lt;- summary(raking)
-raking_summary&lt;/code&gt;&lt;/pre&gt;
+                    )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Raking converged in 26 iterations&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;raking_summary &amp;lt;- summary(raking)
+raking_summary
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## $convergence
 ## [1] &amp;quot;Complete convergence was achieved after 26 iterations&amp;quot;
 ## 
@@ -638,9 +653,11 @@ raking_summary&lt;/code&gt;&lt;/pre&gt;
 ## college    -5.551115e-17  -0.0462526
 ## graduate    1.387779e-16  -0.2190208
 ## highschool  0.000000e+00   0.2652734
-## Total       1.942890e-16   0.5305467&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We’ve not got our raking results. Let’s look at the specifics for each target variable.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$income&lt;/code&gt;&lt;/pre&gt;
+## Total       1.942890e-16   0.5305467
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We&amp;rsquo;ve not got our raking results. Let&amp;rsquo;s look at the specifics for each target variable.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;raking_summary$income
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in %  Resid. Disc.
 ## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 -3.330669e-16
 ## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 -2.331468e-15
@@ -650,8 +667,10 @@ raking_summary&lt;/code&gt;&lt;/pre&gt;
 ## 100k  -0.05588235
 ## 20k   -0.08252595
 ## 50k    0.13840830
-## Total  0.27681661&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$education&lt;/code&gt;&lt;/pre&gt;
+## Total  0.27681661
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;raking_summary$education
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##            Target Unweighted N Unweighted %    Wtd N Wtd % Change in %
 ## college     0.497          628    0.5432526  574.532 0.497  -0.0462526
 ## graduate    0.127          400    0.3460208  146.812 0.127  -0.2190208
@@ -661,23 +680,30 @@ raking_summary&lt;/code&gt;&lt;/pre&gt;
 ## college    -5.551115e-17  -0.0462526
 ## graduate    1.387779e-16  -0.2190208
 ## highschool  0.000000e+00   0.2652734
-## Total       1.942890e-16   0.5305467&lt;/code&gt;&lt;/pre&gt;
+## Total       1.942890e-16   0.5305467
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can also look at the general effect weighting had on our sample. We see that weighting caused a 96.6% increase in the variance.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$general.design.effect&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 1.966204&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With these weights, we are able to append the weights vector to our survey data.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create weights vector and attach to dataset 
-dat$weights &amp;lt;- raking$weightvec&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;raking_summary$general.design.effect
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1.966204
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With these weights, we are able to attach the weights vector to our survey data.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Create weights vector and attach to dataset 
+dat$weights &amp;lt;- raking$weightvec
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;What is the effect of weighting on our outcome? (In this example, the outcome refers to donations. 1 = respondent would donate to a political party, 0 = respondent would not donate to a political party)&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wpct(dat$yhat)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;wpct(dat$yhat)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##         0         1 
-## 0.8132635 0.1867365&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wpct(dat$yhat, dat$weights)&lt;/code&gt;&lt;/pre&gt;
+## 0.8132635 0.1867365
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;wpct(dat$yhat, dat$weights)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##         0         1 
-## 0.8623287 0.1376713&lt;/code&gt;&lt;/pre&gt;
+## 0.8623287 0.1376713
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If we compare the above result with our original outcome, we see that our sample overestimates the proportion of individuals that would donate to a political party. This is likely caused by an oversample of college graduates and high-income earners.&lt;/p&gt;
 &lt;p&gt;There we go! We now know how to weight our survey samples with the &lt;code&gt;{anesrake}&lt;/code&gt; R package.&lt;/p&gt;
-&lt;/div&gt;
 </description>
     </item>
     
