@@ -196,23 +196,23 @@ Nothing should be done by hand – put down the mouse.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Survey raking with {anesrake}</title>
+      <title>Survey raking in R with {anesrake}</title>
       <link>https://bijean.io/blog/tutorials/anesrake/anesrake-tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://bijean.io/blog/tutorials/anesrake/anesrake-tutorial/</guid>
       <description>
-&lt;script src=&#34;https://bijean.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;anesrake-r-package-tutorial&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;{anesrake} R Package Tutorial&lt;/h1&gt;
-&lt;p&gt;We are often faced with a representativeness issue when using samples in surveys. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.&lt;/p&gt;
-&lt;p&gt;The following tutorial shows how to use &lt;code&gt;{anesrake}&lt;/code&gt;, an r package that computes the weights for you!&lt;/p&gt;
-&lt;p&gt;The goal is to identify variables (often demographic) to weight on. The statistical software will compare the variables in your sample to the population to compute the weights.&lt;/p&gt;
+&lt;p&gt;Survey research is often faced with a representativeness issues in sample. The survey sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.&lt;/p&gt;
+&lt;p&gt;The following tutorial shows how to use &lt;code&gt;{anesrake}&lt;/code&gt;, an r package that computes the weights for you.&lt;/p&gt;
+&lt;p&gt;The goal is to identify variables, often demographic, to weight on. The statistical software compares the variables in your sample to the population to compute the weights.&lt;/p&gt;
 &lt;p&gt;For more information on the package, please refer to the following document: &lt;a href=&#34;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&#34; class=&#34;uri&#34;&gt;https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;raw-url&#34; href=&#34;https://raw.githubusercontent.com/bijeanghafouri/website/main/content/blog/Tutorials/anesrake/donations.csv&#34;&gt;Download FILE&lt;/a&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;require(pacman)
 p_load(tidyverse, anesrake, weights)
-dat &amp;lt;- read_csv(&amp;#39;/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/anesrake/donations.csv&amp;#39;)
+dat &amp;lt;- read_csv(&amp;#39;donations.csv&amp;#39;)
 dat &amp;lt;- as.data.frame(dat)
 
 # Set target variables as factors (important!)
@@ -230,7 +230,7 @@ education &amp;lt;- c(&amp;#39;highschool&amp;#39;, &amp;#39;college&amp;#39;, &
 education_prop &amp;lt;- c(.376, .497, .127)
 population &amp;lt;- data_frame(income, education, income_prop, education_prop)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: `data_frame()` was deprecated in tibble 1.1.0.
-## Please use `tibble()` instead.&lt;/code&gt;&lt;/pre&gt;
+## ℹ Please use `tibble()` instead.&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We identify the list of variables we want to weight on by creating a list of ‘targets’. It is important to make sure that the variable names in the dataset and in the population are the same.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;target &amp;lt;- with(population, list(
   income = weights::wpct(income, income_prop),
@@ -260,11 +260,11 @@ population &amp;lt;- data_frame(income, education, income_prop, education_prop)&
                     type = &amp;quot;pctlim&amp;quot;,              # What targets should be used to weight 
                     pctlim = 0.05                 # Threshold for deviation
                     )&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Raking converged in 27 iterations&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Raking converged in 26 iterations&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary &amp;lt;- summary(raking)
 raking_summary&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## $convergence
-## [1] &amp;quot;Complete convergence was achieved after 27 iterations&amp;quot;
+## [1] &amp;quot;Complete convergence was achieved after 26 iterations&amp;quot;
 ## 
 ## $base.weights
 ## [1] &amp;quot;No Base Weights Were Used&amp;quot;
@@ -283,11 +283,11 @@ raking_summary&lt;/code&gt;&lt;/pre&gt;
 ## [1] 1.966204
 ## 
 ## $income
-##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
-## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
-## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
-## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
-## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in %  Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 -3.330669e-16
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 -2.331468e-15
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830  2.664535e-15
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661  5.329071e-15
 ##       Orig. Disc.
 ## 100k  -0.05588235
 ## 20k   -0.08252595
@@ -302,16 +302,16 @@ raking_summary&lt;/code&gt;&lt;/pre&gt;
 ## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
 ##             Resid. Disc. Orig. Disc.
 ## college    -5.551115e-17  -0.0462526
-## graduate    0.000000e+00  -0.2190208
+## graduate    1.387779e-16  -0.2190208
 ## highschool  0.000000e+00   0.2652734
-## Total       5.551115e-17   0.5305467&lt;/code&gt;&lt;/pre&gt;
+## Total       1.942890e-16   0.5305467&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We’ve not got our raking results. Let’s look at the specifics for each target variable.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$income&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
-## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
-## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
-## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
-## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+&lt;pre&gt;&lt;code&gt;##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in %  Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 -3.330669e-16
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 -2.331468e-15
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830  2.664535e-15
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661  5.329071e-15
 ##       Orig. Disc.
 ## 100k  -0.05588235
 ## 20k   -0.08252595
@@ -325,9 +325,9 @@ raking_summary&lt;/code&gt;&lt;/pre&gt;
 ## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
 ##             Resid. Disc. Orig. Disc.
 ## college    -5.551115e-17  -0.0462526
-## graduate    0.000000e+00  -0.2190208
+## graduate    1.387779e-16  -0.2190208
 ## highschool  0.000000e+00   0.2652734
-## Total       5.551115e-17   0.5305467&lt;/code&gt;&lt;/pre&gt;
+## Total       1.942890e-16   0.5305467&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can also look at the general effect weighting had on our sample. We see that weighting caused a 96.6% increase in the variance.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;raking_summary$general.design.effect&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] 1.966204&lt;/code&gt;&lt;/pre&gt;

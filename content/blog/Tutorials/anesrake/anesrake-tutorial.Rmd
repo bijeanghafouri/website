@@ -10,7 +10,7 @@ output:
 
 # {anesrake} R Package Tutorial 
 
-Survey research is often faced with a representativeness issues in sample. The survey sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.
+Survey research is often faced with issues related to sample representativeness. The survey sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.
 
 The following tutorial shows how to use `{anesrake}`, an r package that computes the weights for you. 
 
@@ -22,8 +22,11 @@ For more information on the package, please refer to the following document: htt
 
 
 ```{r, message = F}
+# Load packages 
 require(pacman)
 p_load(tidyverse, anesrake, weights)
+
+# Load data 
 dat <- read_csv('donations.csv')
 dat <- as.data.frame(dat)
 
@@ -41,6 +44,7 @@ In this example, I use data from the United States census to find the proportion
 From census data, we can find population-level marginal proportions for the variables we will weight on. We will be weighting on two variables: income and education. However, you can (perhaps ideally) weight on more variables, including sex, ethnicity, etc. Also, note that these categories are somewhat arbitrary. In a real survey, you are most likely to categorize income and education in other ways. 
 
 ```{r, message = F}
+# Set target variables 
 income <- c('20k', '50k', '100k')
 income_prop <- c(.35, .50, .15)
 education <- c('highschool', 'college', 'graduate')
@@ -51,6 +55,7 @@ population <- data_frame(income, education, income_prop, education_prop)
 
 We identify the list of variables we want to weight on by creating a list of 'targets'. It is important to make sure that the variable names in the dataset and in the population are the same.
 ```{r}
+# Create target list 
 target <- with(population, list(
   income = weights::wpct(income, income_prop),
   education  = weights::wpct(education, education_prop)
@@ -60,6 +65,7 @@ target <- with(population, list(
 
 Now that the population-level proportions are dealt with, we can take a look at our survey results. Using the `weights::wpct` function, let's estimate the proportions of our target variables in the survey. 
 ```{r}
+# Weight estimation 
 weights::wpct(dat$income)
 weights::wpct(dat$education)
 ```
