@@ -1,5 +1,5 @@
 ---
-title: Survey raking with {anesrake}
+title: Survey raking in R with {anesrake}
 author: "Bijean Ghafouri"
 lastmod: 15/11/2021
 output: 
@@ -18,11 +18,13 @@ The goal is to identify variables, often demographic, to weight on. The statisti
 
 For more information on the package, please refer to the following document: https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf
 
+<a id="raw-url" href="https://raw.githubusercontent.com/bijeanghafouri/website/main/content/blog/Tutorials/anesrake/donations.csv">Download FILE</a>
+
 
 ```{r, message = F}
 require(pacman)
 p_load(tidyverse, anesrake, weights)
-dat <- read_csv('/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/anesrake/donations.csv')
+dat <- read_csv('donations.csv')
 dat <- as.data.frame(dat)
 
 # Set target variables as factors (important!)
