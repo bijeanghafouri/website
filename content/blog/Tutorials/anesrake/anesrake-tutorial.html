@@ -1,5 +1,5 @@
 ---
-title: Survey raking with {anesrake}
+title: Survey raking in R with {anesrake}
 author: "Bijean Ghafouri"
 lastmod: 15/11/2021
 output: 
@@ -8,18 +8,18 @@ output:
   highlight: tango
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <div id="anesrake-r-package-tutorial" class="section level1">
 <h1>{anesrake} R Package Tutorial</h1>
-<p>We are often faced with a representativeness issue when using samples in surveys. Our sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.</p>
-<p>The following tutorial shows how to use <code>{anesrake}</code>, an r package that computes the weights for you!</p>
-<p>The goal is to identify variables (often demographic) to weight on. The statistical software will compare the variables in your sample to the population to compute the weights.</p>
+<p>Survey research is often faced with a representativeness issues in sample. The survey sample might be different in important ways from the true population. To adjust for these errors, we can use raking adjustment. Raking allows us to select variables in our sample that will be adjusted based on true population parameters.</p>
+<p>The following tutorial shows how to use <code>{anesrake}</code>, an r package that computes the weights for you.</p>
+<p>The goal is to identify variables, often demographic, to weight on. The statistical software compares the variables in your sample to the population to compute the weights.</p>
 <p>For more information on the package, please refer to the following document: <a href="https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf" class="uri">https://electionstudies.org/wp-content/uploads/2018/04/nes012427.pdf</a></p>
+<p><a id="raw-url" href="https://raw.githubusercontent.com/bijeanghafouri/website/main/content/blog/Tutorials/anesrake/donations.csv">Download FILE</a></p>
 <pre class="r"><code>require(pacman)
 p_load(tidyverse, anesrake, weights)
-dat &lt;- read_csv(&#39;/Users/bijeanghafouri/Dropbox/My Mac (Bijean’s MacBook Pro)/Documents/website/website/content/blog/Tutorials/anesrake/donations.csv&#39;)
+dat &lt;- read_csv(&#39;donations.csv&#39;)
 dat &lt;- as.data.frame(dat)
 
 # Set target variables as factors (important!)
@@ -37,7 +37,7 @@ education &lt;- c(&#39;highschool&#39;, &#39;college&#39;, &#39;graduate&#39;)
 education_prop &lt;- c(.376, .497, .127)
 population &lt;- data_frame(income, education, income_prop, education_prop)</code></pre>
 <pre><code>## Warning: `data_frame()` was deprecated in tibble 1.1.0.
-## Please use `tibble()` instead.</code></pre>
+## ℹ Please use `tibble()` instead.</code></pre>
 <p>We identify the list of variables we want to weight on by creating a list of ‘targets’. It is important to make sure that the variable names in the dataset and in the population are the same.</p>
 <pre class="r"><code>target &lt;- with(population, list(
   income = weights::wpct(income, income_prop),
@@ -67,11 +67,11 @@ population &lt;- data_frame(income, education, income_prop, education_prop)</cod
                     type = &quot;pctlim&quot;,              # What targets should be used to weight 
                     pctlim = 0.05                 # Threshold for deviation
                     )</code></pre>
-<pre><code>## [1] &quot;Raking converged in 27 iterations&quot;</code></pre>
+<pre><code>## [1] &quot;Raking converged in 26 iterations&quot;</code></pre>
 <pre class="r"><code>raking_summary &lt;- summary(raking)
 raking_summary</code></pre>
 <pre><code>## $convergence
-## [1] &quot;Complete convergence was achieved after 27 iterations&quot;
+## [1] &quot;Complete convergence was achieved after 26 iterations&quot;
 ## 
 ## $base.weights
 ## [1] &quot;No Base Weights Were Used&quot;
@@ -90,11 +90,11 @@ raking_summary</code></pre>
 ## [1] 1.966204
 ## 
 ## $income
-##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
-## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
-## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
-## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
-## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in %  Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 -3.330669e-16
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 -2.331468e-15
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830  2.664535e-15
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661  5.329071e-15
 ##       Orig. Disc.
 ## 100k  -0.05588235
 ## 20k   -0.08252595
@@ -109,16 +109,16 @@ raking_summary</code></pre>
 ## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
 ##             Resid. Disc. Orig. Disc.
 ## college    -5.551115e-17  -0.0462526
-## graduate    0.000000e+00  -0.2190208
+## graduate    1.387779e-16  -0.2190208
 ## highschool  0.000000e+00   0.2652734
-## Total       5.551115e-17   0.5305467</code></pre>
+## Total       1.942890e-16   0.5305467</code></pre>
 <p>We’ve not got our raking results. Let’s look at the specifics for each target variable.</p>
 <pre class="r"><code>raking_summary$income</code></pre>
-<pre><code>##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in % Resid. Disc.
-## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 2.775558e-17
-## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 0.000000e+00
-## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830 0.000000e+00
-## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661 2.775558e-17
+<pre><code>##       Target Unweighted N Unweighted %  Wtd N Wtd % Change in %  Resid. Disc.
+## 100k    0.15          238    0.2058824  173.4  0.15 -0.05588235 -3.330669e-16
+## 20k     0.35          500    0.4325260  404.6  0.35 -0.08252595 -2.331468e-15
+## 50k     0.50          418    0.3615917  578.0  0.50  0.13840830  2.664535e-15
+## Total   1.00         1156    1.0000000 1156.0  1.00  0.27681661  5.329071e-15
 ##       Orig. Disc.
 ## 100k  -0.05588235
 ## 20k   -0.08252595
@@ -132,9 +132,9 @@ raking_summary</code></pre>
 ## Total       1.000         1156    1.0000000 1156.000 1.000   0.5305467
 ##             Resid. Disc. Orig. Disc.
 ## college    -5.551115e-17  -0.0462526
-## graduate    0.000000e+00  -0.2190208
+## graduate    1.387779e-16  -0.2190208
 ## highschool  0.000000e+00   0.2652734
-## Total       5.551115e-17   0.5305467</code></pre>
+## Total       1.942890e-16   0.5305467</code></pre>
 <p>We can also look at the general effect weighting had on our sample. We see that weighting caused a 96.6% increase in the variance.</p>
 <pre class="r"><code>raking_summary$general.design.effect</code></pre>
 <pre><code>## [1] 1.966204</code></pre>
