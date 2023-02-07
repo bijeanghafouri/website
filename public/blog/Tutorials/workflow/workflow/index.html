@@ -648,37 +648,30 @@ How you organize your data analysis project is crucial for many reasons."><meta 
   <div class="article-container">
 
     <div class="article-style">
-      
-<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
-
-
-<p><em>Programs must be written for people to read, and only incidentally for machines to execute.</em></p>
+      <p><em>Programs must be written for people to read, and only incidentally for machines to execute.</em></p>
 <p><em>― Harold Abelson, Structure and Interpretation of Computer Programs</em></p>
-<p>How you <a href="https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/">organize</a> your data analysis project is crucial for many reasons. Without a pre-defined structure to your projects, you are likely to forget years or even months from now what you have done looking back at projects. This may be the case when you get back on a dormant project, or receive major revisions in an R&amp;R six months after submission. Projects that involve collaboration between multiple members should also have a unified structure understand of how their analysis is structured to avoid any mistake.</p>
-<p>We call this your <a href="https://hrdag.org/tech-notes/harmful.html">workflow</a>. Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between <strong>tasks</strong>. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level.
-</p>
-<div id="tasks-structure" class="section level3">
-<h3>Tasks structure</h3>
+<p>How you <a href="https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/" target="_blank" rel="noopener">organize</a> your data analysis project is crucial for many reasons. Without a pre-defined structure to your projects, you are likely to forget years or even months from now what you have done looking back at projects. This may be the case when you get back on a dormant project, or receive major revisions in an R&amp;R six months after submission. Projects that involve collaboration between multiple members should also have a unified structure understand of how their analysis is structured to avoid any mistake.</p>
+<p>We call this your <a href="https://hrdag.org/tech-notes/harmful.html" target="_blank" rel="noopener">workflow</a>. Although many will have seen this in the context of their coursework, social science students are rarely taught this. Your project should be divided between <strong>tasks</strong>. Tasks are individual parts of a larger project that are each self-contained and self-documented. The goal of dividing your project in tasks is to make each step of your project as clear as possible. Also, this allows you to facilitate testing and error handling on a higher level.
+\bigskip</p>
+<h3 id="tasks-structure">Tasks structure</h3>
 <p>The first task is to <strong>import</strong> your data. This tasks has at minimum three directories: <code>input</code>, <code>output</code> and <code>src</code> (source).</p>
 <ul>
 <li><code>input</code> contains raw files for task to read</li>
 <li><code>output</code> contains files ready to go</li>
-<li><code>src</code> contains scripts to read input and write to output</li>
+<li><code>src</code>  contains scripts to read input and write to output</li>
 </ul>
-<p>Let’s see what a basic folder structure looks like. These folder names may change based on field or personal preference, but here they are mostly standard.</p>
+<p>Let&rsquo;s see what a basic folder structure looks like. These folder names may change based on field or personal preference, but here they are mostly standard.</p>
 <pre><code>  
 │
 └─── docs
 └─── input
 └─── output
-└─── src</code></pre>
-<p>The <code>input</code> never get modified. You will only drop raw data files into it. This is the whole point of having scripts in <code>src</code>, to read and modify the input. Once transformed, we can place the new files in <code>output</code>. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files. Furthermore, the objective of <code>src</code> is not to clean and manipulate data on a deep level, but rather to create a structured, rectangular datasets ready for further analyses, dumped into <code>output</code>. In subsequent tasks, you should take in the files from <code>output</code> as inputs to clean and analyze specifically for the goal of this part. You can imagine this as a chain-rule for a structured flow of your data.</p>
-</div>
-<div id="structuring-your-task-in-r" class="section level3">
-<h3>Structuring your task in <code>R</code></h3>
+└─── src
+</code></pre>
+<p>The <code>input</code> never get modified. You will only drop raw data files into it. This is the whole point of having scripts in <code>src</code>, to read and modify the input. Once transformed, we can place the new files in <code>output</code>. The reason why you should never modify input files in this directory is because you should always keep your raw files. This is key in reproducibility since we need to trace back your analysis from the very start of your project, i.e. your raw files. Furthermore, the objective of <code>src</code> is not to clean and manipulate data on a deep level, but rather to create a structured, rectangular datasets ready for further analyses, dumped into <code>output</code>. In subsequent tasks, you should take in the files from <code>output</code> as inputs to clean and analyze specifically for the goal of this part. You can imagine this as a chain-rule for a structured flow of your data.</p>
+<h3 id="structuring-your-task-in-r">Structuring your task in <code>R</code></h3>
 <p>To create these folder, you can run the following commands. This should be at the top of any script.</p>
-<pre class="r"><code># ------------ packages  ----------
+<pre><code class="language-r"># ------------ packages  ----------
 require(pacman)
 pacman::p_load(here)
 
@@ -693,10 +686,11 @@ dir.create(paste0(path,&quot;/&quot;,&quot;output&quot;,sep=&quot;&quot;),showWa
 dir.create(paste0(path,&quot;/&quot;,&quot;src&quot;,sep=&quot;&quot;),showWarnings = T)
 pathin = paste0(path,&quot;/&quot;,&quot;input&quot;,sep=&quot;&quot;)
 pathout = paste0(path,&quot;/&quot;,&quot;ouput&quot;,sep=&quot;&quot;)
-pathsrc = paste0(path,&quot;/&quot;,&quot;scr&quot;,sep=&quot;&quot;)</code></pre>
-<p>This will create three folders for each component of this tasks. You may notice that I set the directory with <code>{here}</code>. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that <a href="https://i.imgur.com/jKWxztR.png">everyone</a> has different directory structures, this <a href="https://github.com/jennybc/here_here#readme">package</a> allows you to limit the exposure of your local setup.</p>
+pathsrc = paste0(path,&quot;/&quot;,&quot;scr&quot;,sep=&quot;&quot;)
+</code></pre>
+<p>This will create three folders for each component of this tasks. You may notice that I set the directory with <code>{here}</code>. This package is extremely useful for others that may want to reproduce your workflow on their local machines. Given that <a href="https://i.imgur.com/jKWxztR.png" target="_blank" rel="noopener">everyone</a> has different directory structures, this <a href="https://github.com/jennybc/here_here#readme" target="_blank" rel="noopener">package</a> allows you to limit the exposure of your local setup.</p>
 <p>The <code>input</code> folder will contain <strong>all</strong> data files you need for this project (all subsequent tasks). Then, you will read them in your script, contained in the <code>src</code> folder, to then export to the <code>output</code> folder (often in a .csv format). Following tasks will read in data files from <code>output</code> that they each need.</p>
-<p>I have the following structure for a single analysis task that comes directly from the <a href="https://hrdag.org/">HRDA Group</a>. You can have many analysis tasks, depending on the nature of your project.</p>
+<p>I have the following structure for a single analysis task that comes directly from the <a href="https://hrdag.org/" target="_blank" rel="noopener">HRDA Group</a>. You can have many analysis tasks, depending on the nature of your project.</p>
 <pre><code>├── import
 │   ├── Makefile
 │   ├── input
@@ -716,113 +710,117 @@ pathsrc = paste0(path,&quot;/&quot;,&quot;scr&quot;,sep=&quot;&quot;)</code></pr
     ├── Makefile
     ├── input
     ├── output
-    └── src</code></pre>
-<p>The goal of the following structure is create a linear flow to how your data is transformed. For example, your data from into the <code>import</code> directory raw. The <code>clean</code> directory will take in the data from the output folder of <code>import</code> and process it. The <code>model</code> directory will then itself take the output data from <code>clean</code> and process it. In this step, you will likely create a <code>tables</code> and <code>figs</code> folder in the output folder. Finally, <code>write</code> will follow the same flow. For specific file names, I recommend following these <a href="https://speakerdeck.com/jennybc/how-to-name-files">best practices</a></p>
+    └── src
+</code></pre>
+<p>The goal of the following structure is create a linear flow to how your data is transformed. For example, your data from into the <code>import</code> directory raw. The <code>clean</code> directory will take in the data from the output folder of <code>import</code> and process it. The <code>model</code> directory will then itself take the output data from <code>clean</code> and process it. In this step, you will likely create a <code>tables</code> and <code>figs</code> folder in the output folder. Finally, <code>write</code> will follow the same flow. For specific file names, I recommend following these <a href="https://speakerdeck.com/jennybc/how-to-name-files" target="_blank" rel="noopener">best practices</a></p>
 <p>Remember, this structure is for one task only. Depending on the nature of your project, or personal preference, you may need only one task or more.</p>
-</div>
-<div id="self-documentation" class="section level3">
-<h3>Self-Documentation</h3>
+<h3 id="self-documentation">Self-Documentation</h3>
 <p>Many will dislike the use of documentation in the classic format of a .txt file that you update regularly as you move forward with your project. You probably experienced this where, at the end of the day, your code almost never keeps up with your documentation. This is why it is strongly recommended to <strong>self-document</strong> your code within your scripts. This will allow you to document your code within your script as-you-go. Obviously, you will continue to keep track of what you do in your documentation. The difference is that your documentation will be higher-level instructions, while your self-documentation will follow your script closely. In the case where your documentation is out-of-date, you will be able to rely on your script to reconstruct the steps of your project.</p>
-</div>
-<div id="optional-directories" class="section level3">
-<h3>Optional directories</h3>
+<h3 id="optional-directories">Optional directories</h3>
 <p>You may wish to incorporate personal workflow items into this system.
 First, it is very well possible that you use notebooks or markdown files to test your code as you write. Although this might be a very good solution for testing, it is recommended that you always have a final script that contains all your chunks in the <code>src</code> folder. If you use notebooks, put these .rmd or .ipynb files in a <code>note</code> directory.</p>
 <p>You may have noticed that the import task structure contains a <code>docs</code> directory. This is for any documentation that comes with data you are using. This will often be the case with survey data, or data from other public sources.</p>
-</div>
-<div id="makefile-and-drake" class="section level3">
-<h3>Makefile and <code>{drake}</code></h3>
-<p>You may notice that each task contains a makefile. This file is to automate the execution of all the scripts from the <code>src</code> folder. Although in other programming languages you might need to manually create a makefile, in <code>R</code> you can use the <code>{drake}</code> <a href="https://milesmcbain.xyz/posts/the-drake-post/">package</a> (more info <a href="https://www.youtube.com/watch?v=4vu8h_Zh8Wg">here</a>).</p>
+<h3 id="makefile-and-drake">Makefile and <code>{drake}</code></h3>
+<p>You may notice that each task contains a makefile. This file is to automate the execution of all the scripts from the <code>src</code> folder. Although in other programming languages you might need to manually create a makefile, in <code>R</code> you can use the <code>{drake}</code> <a href="https://milesmcbain.xyz/posts/the-drake-post/" target="_blank" rel="noopener">package</a> (more info <a href="https://www.youtube.com/watch?v=4vu8h_Zh8Wg" target="_blank" rel="noopener">here</a>).</p>
 <p>There a numerous tools to create and automate workflow styles. Many use targets, like <code>{drake}</code>. Here are a few:</p>
 <ul>
-<li><a href="http://projecttemplate.net/">ProjectTemplate</a></li>
-<li><a href="https://jdblischak.github.io/workflowr/">workflowr</a></li>
-<li><a href="https://github.com/benmarwick/rrtools">rrtools</a></li>
-<li><a href="https://github.com/vimc/orderly">ordely</a></li>
-<li><a href="https://github.com/MilesMcBain/fnmate">fnmate</a></li>
-<li><a href="https://github.com/milesmcbain/dflow">dflow</a></li>
-<li><a href="https://docs.ropensci.org/drake/">drake</a></li>
-<li><a href="https://pirategrunt.com/represtools/">represtool</a></li>
-<li><a href="https://itsalocke.com/starters/">starters</a></li>
+<li><a href="http://projecttemplate.net/" target="_blank" rel="noopener">ProjectTemplate</a></li>
+<li><a href="https://jdblischak.github.io/workflowr/" target="_blank" rel="noopener">workflowr</a></li>
+<li><a href="https://github.com/benmarwick/rrtools" target="_blank" rel="noopener">rrtools</a></li>
+<li><a href="https://github.com/vimc/orderly" target="_blank" rel="noopener">ordely</a></li>
+<li><a href="https://github.com/MilesMcBain/fnmate" target="_blank" rel="noopener">fnmate</a></li>
+<li><a href="https://github.com/milesmcbain/dflow" target="_blank" rel="noopener">dflow</a></li>
+<li><a href="https://docs.ropensci.org/drake/" target="_blank" rel="noopener">drake</a></li>
+<li><a href="https://pirategrunt.com/represtools/" target="_blank" rel="noopener">represtool</a></li>
+<li><a href="https://itsalocke.com/starters/" target="_blank" rel="noopener">starters</a></li>
 </ul>
-<p>The <code>{drake}</code> package makes your code focus on functions, rather than simple scripts. Although it has the same intention as makefiles, the package’s logic is embedded within a dataframe, following <code>R</code>’s ecosystem.</p>
-</div>
-<div id="notebooks" class="section level3">
-<h3>Notebooks</h3>
-<p>Notebooks combines the code, text and visualization in one document. This may help with reproducibility because each chunk is immediately followed by its output. So what are the downsides? The main issue with notebooks is the lack of structure in running chunks. Although they are sequentially ordered, you are most probably running them in all sorts of ways to fix bugs or add features. This lack of consistency is likely to produce more problems than not. For more on problems associated with notebooks, see this <a href="https://www.youtube.com/watch?v=7jiPeIFXb6U">talk</a> by Joel Grus.</p>
+<p>The <code>{drake}</code> package makes your code focus on functions, rather than simple scripts. Although it has the same intention as makefiles, the package&rsquo;s logic is embedded within a dataframe, following <code>R</code>&rsquo;s ecosystem.</p>
+<h3 id="notebooks">Notebooks</h3>
+<p>Notebooks combines the code, text and visualization in one document. This may help with reproducibility because each chunk is immediately followed by its output. So what are the downsides? The main issue with notebooks is the lack of structure in running chunks. Although they are sequentially ordered, you are most probably running them in all sorts of ways to fix bugs or add features. This lack of consistency is likely to produce more problems than not. For more on problems associated with notebooks, see this <a href="https://www.youtube.com/watch?v=7jiPeIFXb6U" target="_blank" rel="noopener">talk</a> by Joel Grus.</p>
 <p>Notebooks remain useful for the courses, exploratory data analysis, reports (where more text than code) and dashboards.</p>
-</div>
-<div id="project-as-an-r-package" class="section level3">
-<h3>Project as an <code>R</code> Package</h3>
-<p>As per McBain’s <a href="https://milesmcbain.xyz/posts/an-okay-idea/">blog post</a>, although creating an <code>R</code> package is used by many, there are some pitfalls associated with it. Although it is a great way to automate your project with testing and solid structure, there remains the little payoff, and the signal to noise ratio is simply much too low. Another issue is the fact that not everyone is comfortable with the package environment, even if they are a domain expert. This defeats the purpose of reproducibility since the public’s access becomes limited.</p>
-</div>
-<div id="alternatives-to-project-structure" class="section level3">
-<h3>Alternatives to project structure</h3>
+<h3 id="project-as-an-r-package">Project as an <code>R</code> Package</h3>
+<p>As per McBain&rsquo;s <a href="https://milesmcbain.xyz/posts/an-okay-idea/" target="_blank" rel="noopener">blog post</a>, although creating an <code>R</code> package is used by many, there are some pitfalls associated with it. Although it is a great way to automate your project with testing and solid structure, there remains the little payoff, and the signal to noise ratio is simply much too low. Another issue is the fact that not everyone is comfortable with the package environment, even if they are a domain expert. This defeats the purpose of reproducibility since the public&rsquo;s access becomes limited.</p>
+<h3 id="alternatives-to-project-structure">Alternatives to project structure</h3>
 <p>We will often see directories and project structures that follow a flow based on the content of the folders rather than the order of the project itself. For example, projects will be organized with the following folders: <code>data</code>, <code>analysis</code>, <code>tables-figures</code>. Although this does fits the purpose of reproducibility, it does not flow with the logic of the project. You should have different folders for different <strong>tasks</strong>. In the example above, many tasks can be included in the <code>analysis</code> folder, like cleaning and modeling. Some may point out that this is just a discrepancy in the placement of folders in different directories, which is essentially the case. However, the problem lies within how someone who has never worked on this project will be able to understand its logic.</p>
-<p>Finally, you can find great posts <a href="https://chrisvoncsefalvay.com/2018/08/09/structuring-r-projects/">here</a>, <a href="https://the-turing-way.netlify.app/welcome">here</a> and <a href="https://edwinth.github.io/ADSwR/index.html">here</a> to help you structure your projects.</p>
+<p>Finally, you can find great posts <a href="https://chrisvoncsefalvay.com/2018/08/09/structuring-r-projects/" target="_blank" rel="noopener">here</a>,  <a href="https://the-turing-way.netlify.app/welcome" target="_blank" rel="noopener">here</a> and <a href="https://edwinth.github.io/ADSwR/index.html" target="_blank" rel="noopener">here</a> to help you structure your projects.</p>
 <p>At the end of the day, the goal for a clear project structure is to convey what exactly you are doing to everyone else that may have access to it.</p>
-</div>
-<div id="patrick-balls-principles-of-data-processing" class="section level2">
-<h2>Patrick Ball’s Principles of Data Processing</h2>
-<p>This is from his great <a href="https://www.youtube.com/watch?v=ZSunU9GQdcI">talk</a>. Basically, he gives his take on ‘where to put your stuff’.</p>
+<h2 id="patrick-balls-principles-of-data-processing">Patrick Ball&rsquo;s Principles of Data Processing</h2>
+<p>This is from his great <a href="https://www.youtube.com/watch?v=ZSunU9GQdcI" target="_blank" rel="noopener">talk</a>. Basically, he gives his take on &lsquo;where to put your stuff&rsquo;.</p>
 <p>His main argument is that the way documentation is understood makes us take it for granted, when it is actually central to our code. How do we write code and organize projects to know what you did a few months from now? It is also meant to organize your work to facilitate collaboration with colleagues where they will be able to understand <em>exactly</em> what you are doing.</p>
 <p>He identifies four goals for statistical workflow:</p>
 <ul>
-<li><p><strong>Transparency</strong>: possible to review every task</p></li>
-<li><p>Auditbility: possible to test the result of every task, where the test is often done in a different computer language and by different analyst.</p></li>
-<li><p>Reproducibility: any scientist with the same tools and the same code could recalculate the results and get the same answers.</p></li>
-<li><p>Scalabilty: ‘more than 2’ input files, updates to your input files, analysts who are going to work on the project, results in the report you will publish, different analyses which derive from the inputs, languages needed in the analysis, etc.</p></li>
+<li>
+<p><strong>Transparency</strong>: possible to review every task</p>
+</li>
+<li>
+<p>Auditbility: possible to test the result of every task, where the test is often done in a different computer language and by different analyst.</p>
+</li>
+<li>
+<p>Reproducibility: any scientist with the same tools and the same code could recalculate the results and get the same answers.</p>
+</li>
+<li>
+<p>Scalabilty: &lsquo;more than 2&rsquo; input files, updates to your input files, analysts who are going to work on the project, results in the report you will publish, different analyses which derive from the inputs, languages needed in the analysis, etc.</p>
+</li>
 </ul>
-<div id="design-tactics" class="section level3">
-<h3>Design Tactics</h3>
+<h3 id="design-tactics">Design Tactics</h3>
 <ul>
-<li><p>Think like a pipeline for your flow</p></li>
-<li><p>Project flow with makefiles</p></li>
-<li><p>Everything in code: all the changes to the data are written in an executable file. If it’s not in code, how are you going to remember it? You can’t depend on yourself to remember something that needs to be done. Not in documentation, because code evolves much faster than documentation. You will thus not know if the documentation follows exactly what is happening.</p></li>
-<li><p>Simpler is better, but don’t take this to the extreme.</p></li>
-<li><p>Explicit is better than implicit, but don’t take this to the extreme.</p></li>
-<li><p>Exceptions are bad but sometimes necessary, but don’t take this to the extreme.</p></li>
-<li><p>Use Unix, bash, ssh.</p></li>
-<li><p>Get conformable with the terminal. Your project will be available everywhere.</p></li>
-<li><p>Separate data from logic.</p></li>
+<li>
+<p>Think like a pipeline for your flow</p>
+</li>
+<li>
+<p>Project flow with makefiles</p>
+</li>
+<li>
+<p>Everything in code: all the changes to the data are written in an executable file. If it&rsquo;s not in code, how are you going to remember it? You can&rsquo;t depend on yourself to remember something that needs to be done. Not in documentation, because code evolves much faster than documentation. You will thus not know if the documentation follows exactly what is happening.</p>
+</li>
+<li>
+<p>Simpler is better, but don&rsquo;t take this to the extreme.</p>
+</li>
+<li>
+<p>Explicit is better than implicit, but don&rsquo;t take this to the extreme.</p>
+</li>
+<li>
+<p>Exceptions are bad but sometimes necessary, but don&rsquo;t take this to the extreme.</p>
+</li>
+<li>
+<p>Use Unix, bash, ssh.</p>
+</li>
+<li>
+<p>Get conformable with the terminal. Your project will be available everywhere.</p>
+</li>
+<li>
+<p>Separate data from logic.</p>
+</li>
 </ul>
-</div>
-<div id="the-problems-with-documentation" class="section level3">
-<h3>The Problems with documentation</h3>
+<h3 id="the-problems-with-documentation">The Problems with documentation</h3>
 <p>Documentation for code is never complete, on point, up to date. You will never know if the documentation is reliable because the probability of a mismatch is too big given how we behave when coding. We should not trust ourselves, because too many mistakes happen.</p>
 <p>The goal of documentation, making clear what you are going, is great and incredibly important. However, it is the way we satisfy this goal that leads to deception.</p>
 <p>For things that do not change much, like input data, exported data and common libraries, classic documentation is appropriate. However, it is for code that most likely changes extremely often that this will not do. In fact, a good project is self-documenting.</p>
 <p>On version control, you should keep track of the <em>process</em> of doing the project: completeness, todos, bugs, receiving data, shipping results. Do not document the content of a project in version control, because you can understand the content simply by reading the content. It is useless to repeat yourself twice.</p>
-</div>
-<div id="code-flow-structure" class="section level3">
-<h3>Code Flow Structure</h3>
+<h3 id="code-flow-structure">Code Flow Structure</h3>
 <ul>
-<li><strong>Import</strong>: Read data from <code>input</code> with <code>src</code> files and write to <code>output</code>
+<li>
+<p><strong>Import</strong>: Read data from <code>input</code> with <code>src</code> files and write to <code>output</code></p>
 <ul>
 <li>This largely consists in reading all types of different data and writing to a rectangular .csv file.</li>
-</ul></li>
-<li><strong>Clean</strong>: The data from <code>output</code> in the <strong>import</strong> task goes into to <code>input</code> directory of the <strong>clean</strong> task.
+</ul>
+</li>
+<li>
+<p><strong>Clean</strong>: The data from <code>output</code> in the <strong>import</strong> task goes into to <code>input</code> directory of the <strong>clean</strong> task.</p>
 <ul>
 <li>Do you notice the linear flow here?</li>
-</ul></li>
 </ul>
-<p>… and so on.</p>
-</div>
-<div id="self-documentation-symbolic-links-and-metadata." class="section level3">
-<h3>Self-Documentation, symbolic links and metadata.</h3>
-<p>The way you get your tasks done is with structure, not documentation. You need to tie your tasks together in a coherent and consistent manner in order to facilitate the integration of others and you’re eventual reintegration to your project.</p>
+</li>
+</ul>
+<p>&hellip; and so on.</p>
+<h3 id="self-documentation-symbolic-links-and-metadata">Self-Documentation, symbolic links and metadata.</h3>
+<p>The way you get your tasks done is with structure, not documentation. You need to tie your tasks together in a coherent and consistent manner in order to facilitate the integration of others and you&rsquo;re eventual reintegration to your project.</p>
 <p>Symlinks show the relationship among tasks.
 Task names describe what happens in a task.
-Nothing should be done by hand – put down the mouse.</p>
-</div>
-<div id="symlinks" class="section level3">
-<h3>Symlinks</h3>
-</div>
-<div id="makefiles" class="section level3">
-<h3>Makefiles</h3>
+Nothing should be done by hand &ndash; put down the mouse.</p>
+<h3 id="symlinks">Symlinks</h3>
+<h3 id="makefiles">Makefiles</h3>
 <p>This is allow you to use the command line without specific execution code. All you need to call is the makefile, and for all your projects.</p>
-</div>
-</div>
 
     </div>
 
@@ -1166,7 +1164,7 @@ Nothing should be done by hand – put down the mouse.</p>
   
 
   <p class="powered-by">
-    © Bijean Ghafouri <code>2019-2022</code>
+    © Bijean Ghafouri <code>2019-2023</code>
   </p>
 
   

@@ -36,7 +36,7 @@ dat$education <- as.factor(dat$education)
 ```
 
 
-# Data simulation
+### Data simulation
 First, we need to find our population-level estimates. In some cases, you will have access to population-level data from which you can draw your point estimates. However, you are likely to not have direct access to these data. You will need to find these statistics from other sources. 
 
 In this turorial, I use data from the United States census to find the proportions of each category in my variables. I find [population-level education levels here](https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html), and [income levels here](https://www.statista.com/statistics/203183/percentage-distribution-of-household-income-in-the-us/). 
@@ -80,6 +80,7 @@ Seems like we have an over-representation of respondents with an income between 
 
 
 
+### Raking
 The `{anesrake}` R package uses the ANES weighting algorithm to provide weights to any sample. We computed all the necessary parameters above. All we need to do is plug-and-play. There are many function arguments we can specify that I do not include here. The  `weightvec` argument allows us to supply a vector of weights if we are using a dataset that already offers weights. We could also use the `filter` argument to supply a binary vector indicating which observations to include/exclude for weighting. For example, we may want to exclude observations where respondent did not provide an answer to the outcome question. 
 
 
@@ -102,7 +103,6 @@ We've not got our raking results. Let's look at the specifics for each target va
 ```{r}
 raking_summary$income
 raking_summary$education
-
 ```
 
 We can also look at the general effect weighting had on our sample. We see that weighting caused a 96.6% increase in the variance. 

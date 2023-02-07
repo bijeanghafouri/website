@@ -5,7 +5,7 @@
     <link>https://bijean.io/resources/</link>
       <atom:link href="https://bijean.io/resources/index.xml" rel="self" type="application/rss+xml" />
     <description>Resources</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Bijean Ghafouri `2019-2022`</copyright><lastBuildDate>Sun, 30 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Bijean Ghafouri `2019-2023`</copyright><lastBuildDate>Sun, 30 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://bijean.io/images/icon_hu51f3082b9266112b12a315c5904e19e0_297440_512x512_fill_lanczos_center_2.png</url>
       <title>Resources</title>
@@ -17,15 +17,10 @@
       <link>https://bijean.io/resources/datasources/</link>
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://bijean.io/resources/datasources/</guid>
-      <description>
-&lt;link href=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://bijean.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;a href=&#34;https://doodles.mountainmath.ca/&#34;&gt;R for Canadians&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://archive.ics.uci.edu/ml/index.php?fbclid=IwAR2CgM30eom1uUQ-93PSe966ML4_YV61EGcp3x93fR5-ecRdcw6R_9tIdlc&#34;&gt;UCI Data Repository&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://data.cityofchicago.org/&#34;&gt;City of Chicago&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://ropensci.org/&#34;&gt;Software for Reproducibility&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://doodles.mountainmath.ca/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R for Canadians&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://archive.ics.uci.edu/ml/index.php?fbclid=IwAR2CgM30eom1uUQ-93PSe966ML4_YV61EGcp3x93fR5-ecRdcw6R_9tIdlc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UCI Data Repository&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://data.cityofchicago.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;City of Chicago&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ropensci.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Software for Reproducibility&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -34,17 +29,14 @@
       <link>https://bijean.io/resources/tutorials/</link>
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://bijean.io/resources/tutorials/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;a href=&#34;https://programminghistorian.org/en/lessons/intro-to-bash&#34;&gt;Introduction to Bash and the command line&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://swcarpentry.github.io/shell-novice/&#34;&gt;The Unix Shell&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bigbookofr.com/index.html&#34;&gt;Big Book of R (+100 Books)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;–&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://programminghistorian.org/en/lessons/intro-to-bash&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Introduction to Bash and the command line&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://swcarpentry.github.io/shell-novice/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Unix Shell&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bigbookofr.com/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Big Book of R (+100 Books)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
 &lt;p&gt;My favorite blogs, newsletters, substacks:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.edge.org/&#34;&gt;Edge&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://pudding.cool/&#34;&gt;Pudding&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://fwiwnewsletter.substack.com/&#34;&gt;FWIW&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edge.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Edge&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pudding.cool/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pudding&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://fwiwnewsletter.substack.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FWIW&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -1,0 +1,26 @@
+---
+title: "What I read this week"
+author: "Bijean Ghafouri"
+lastmod: 2023-01-31
+output: 
+  html_document:
+  theme: cosmo
+  highlight: tango
+---
+
+
+
+
+### 02-06-2023
+[Don't specialize, hybridize.](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/), Stephan Ango
+
+
+[Brain in a vat](https://iep.utm.edu/brain-in-a-vat-argument/)
+
+
+[Cédric Villani: 'Mathematics is about progress and adventure and emotion'](https://www.theguardian.com/science/2015/mar/01/cedric-villani-mathematics-progress-adventure-emotion), The Guardian 
+
+[A 50-Year Quest: My Personal Journey with the Second Law of Thermodynamics](https://writings.stephenwolfram.com/2023/02/a-50-year-quest-my-personal-journey-with-the-second-law-of-thermodynamics/), Stephen Wolfram
+
+[You and your research](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html), Richard Hamming
+
