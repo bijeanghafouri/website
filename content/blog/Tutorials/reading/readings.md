@@ -12,7 +12,7 @@ output:
 
 
 ### 02-06-2023
-[Don't specialize, hybridize.](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/), Stephan Ango
+[Don't specialize, hybridize.](https://stephanango.com/hybridize), Stephan Ango
 
 
 [Brain in a vat](https://iep.utm.edu/brain-in-a-vat-argument/)
