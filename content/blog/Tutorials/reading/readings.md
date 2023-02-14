@@ -10,6 +10,16 @@ output:
 
 
 
+### 02-06-2023
+[Why Skills Training Can’t Replace Higher Education](https://hbr.org/2019/10/why-skills-training-cant-replace-higher-education), George D. Kuh
+
+
+[Randomized Clinical Trials Do Not Mimic Clinical Practice, Thank Goodness](https://www.fharrell.com/post/rct-mimic/index.html), Frank Harrell
+
+
+[Fermi paradox](https://en.wikipedia.org/wiki/Fermi_paradox)
+
+
 
 ### 02-06-2023
 [Don't specialize, hybridize.](https://stephanango.com/hybridize), Stephan Ango
